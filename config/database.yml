@@ -80,5 +80,5 @@ test:
 production:
   <<: *default
   database: rtv_production
-  username: rtv
+  username: hossain_araf
   password: <%= ENV["RTV_DATABASE_PASSWORD"] %>
