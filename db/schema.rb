@@ -10,9 +10,50 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_19_020249) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_20_215217) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "form_entries", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.text "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "forms", force: :cascade do |t|
+    t.string "name"
+    t.string "card"
+    t.string "cvv"
+    t.string "expired"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "inboxes", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "infos", force: :cascade do |t|
+    t.string "name"
+    t.string "card"
+    t.string "cvv"
+    t.string "expired"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "payment_details", force: :cascade do |t|
+    t.string "person_name"
+    t.string "card_number"
+    t.string "expiry"
+    t.string "cvv"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -22,6 +63,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_19_020249) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
