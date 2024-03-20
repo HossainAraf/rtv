@@ -1,0 +1,20 @@
+<h1>Form Entries</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Message</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @form_entries.each do |form_entry| %>
+      <tr>
+        <td><%= form_entry.name %></td>
+        <td><%= form_entry.email %></td>
+        <td><%= form_entry.message %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

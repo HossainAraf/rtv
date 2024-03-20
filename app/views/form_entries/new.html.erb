@@ -1,0 +1,22 @@
+<h1>New Form Entry</h1>
+
+<%= form_with(model: @form_entry, url: form_entries_create_path, local: true) do |form| %>
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+  
+  <div>
+    <%= form.label :email %>
+    <%= form.email_field :email %>
+  </div>
+  
+  <div>
+    <%= form.label :message %>
+    <%= form.text_area :message %>
+  </div>
+  
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
