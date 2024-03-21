@@ -25,7 +25,7 @@ class InfosController < ApplicationController
 
     respond_to do |format|
       if @info.save
-        format.html { redirect_to info_url(@info), notice: "Info was successfully created." }
+        format.html { redirect_to info_url(@info), notice: "Something went wrong. Please Try Later." }
         format.json { render :show, status: :created, location: @info }
       else
         format.html { render :new, status: :unprocessable_entity }
