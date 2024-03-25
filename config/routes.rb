@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   devise_for :admins
-  resources :feedbacks
+  namespace :admin do
+    resources :feedbacks
+  end
+  # define feedback routes without the admin namespace
+  resources :feedbacks, only: [:index, :show]
   resources :infos
   get 'home/index'
   devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout' }
