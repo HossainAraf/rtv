@@ -1,4 +1,17 @@
 class FeedbacksController < ApplicationController
+  before_action :authorize!
+
+  private
+
+  def authorize!
+    authorize current_user, :manage, Feedback unless current_user.admin?
+  end
+
+  public
+
+  skip_before_action :authenticate_admin_for_feedbacks, only: %i[ index show ]
+  skip_before_action :authorize!, only: %i[ index show ]
+
   before_action :set_feedback, only: %i[ show edit update destroy ]
 
   # GET /feedbacks or /feedbacks.json
