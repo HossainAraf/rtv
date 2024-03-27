@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'dashboard/index'
   resources :feedbacks
   resources :infos
   get 'home/index'
