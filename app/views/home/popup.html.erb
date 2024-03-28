@@ -1,0 +1,15 @@
+<!-- app/views/home/popup.html.erb -->
+<html>
+<head>
+  <title>Popup Page</title>
+</head>
+<body>
+  <h1>This is a Popup Page</h1>
+  <button id="goToHomeButton">Go to Home Page</button>
+  <script>
+    document.getElementById("goToHomeButton").addEventListener("click", function() {
+      window.location.href = "./home/index";
+    });
+  </script>
+</body>
+</html>
