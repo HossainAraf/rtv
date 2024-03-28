@@ -6,8 +6,13 @@
   <div class="field">
   <%= f.label :I_am %>
   <br />
-  <%= f.select :gender, ["man", "woman", "couple"], include_blank: true %>
+  <%= f.select :gender, ["man", "woman", "couple"] %>
 </div>
+
+<div class="field">
+<%= f.label :looking_for, "Looking for" %>
+<br />
+<%= f.select :looking, ["woman", "man", "couple"] %>
 
   <div class="field">
     <%= f.label :email %><br />
