@@ -1,7 +1,13 @@
-<h2>Sign up</h2>
+<h2>Jordi App</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+  <%= f.label :I_am %>
+  <br />
+  <%= f.select :gender, ["man", "woman", "couple"], include_blank: true %>
+</div>
 
   <div class="field">
     <%= f.label :email %><br />
