@@ -17,7 +17,7 @@
                 <p class="text-white-70 mt-4 f-15 mb-0"> Meet local adults for no strings attached dating on the web's only member-voted online adult dating service.
                 100% FREE Dating Service, Free Photo Personals, Chat, Messaging & More</p>
                 <div class="mt-5">
-                  <button id="goToHomeButton" class="btn btn-danger" type="button">Join if you are 18+</button>
+                  <button class="goToHomeButton" class="btn btn-danger" type="button">Join if you are 18+</button>
                 </div>
               </div>
             </div>
@@ -129,7 +129,7 @@
           <span class="flex-c action">
             <h2>MOBILE READY. ARE YOU ON THE RUN?</h2>
             <p>Enjoy the full BBW experience for mobile. With our handcrafted responsive website you have full access to all features no matter where you are. Desktop, tablet or mobile - Size doesn't matter after all.</p>
-            <button class="btn btn-danger" type="button">Join Now</button>
+            <button class="goToHomeButton" class="btn btn-danger" type="button">Join if you are 18+</button>
           </span>
           <div class="action-img">
             <%= image_tag "https://www.bing.com/th?id=OIP.MkhUoHNLcXwgnQ4Iy0uJkAHaE8&w=139&h=100&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2", class:"rounded-circle" %>          </div>
@@ -146,8 +146,10 @@
 </section>
 
 <script>
-  document.getElementById("goToHomeButton").addEventListener("click", function() {
-    window.location.href = "./home/index";
+  document.body.addEventListener("click", function(event) {
+    if (event.target.classList.contains("goToHomeButton")) {
+      window.location.href = "./sign_up";
+    }
   });
 </script>
 </body>
