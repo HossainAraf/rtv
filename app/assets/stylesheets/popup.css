@@ -1,4 +1,38 @@
 body {
   background-color: blueviolet;
-  background-image: url('./assets/temp-01.jpg');
+}
+
+#banner {
+  background-image: url('https://r4.wallpaperflare.com/wallpaper/587/242/484/women-bikini-erotic-natalia-vodianova-1920x1080-people-hot-girls-hd-art-wallpaper-c9ab8789c7e26ecbb3346168cd1a0293.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  padding: 10% 1%;
+}
+
+.image-container-wrapper {
+  margin-top: 1%;
+  padding-top: 1%;
+}
+
+.image-container {
+  margin: 0.1% auto;
+  text-align: center;
+}
+
+.image-container img {
+  width: 20rem;
+  height: 20rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 480px) {
+  #home {
+    padding: 1%;
+  }
+
+  /* .image-container-wrapper {
+    margin-top: 1%;
+    padding-top: 2%;
+  } */
 }
