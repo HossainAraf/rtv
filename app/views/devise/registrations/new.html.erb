@@ -1,29 +1,57 @@
-<h2>Sign up</h2>
+<html>
+<head>
+  <title>Registration Page</title>
+  <link rel="stylesheet" type="text/css" href="./assets/registrations.css">
+</head>
+<body>
+<section class="h-100">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-md-6">
+          <div class="card card-registration my-4">
+            <div class="card-body">
+              <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "registration-form"}) do |f| %>
+                <%= render "devise/shared/error_messages", resource: resource %>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+                <div class="mb-3">
+                  <%= f.label :I_am, class: "form-label" %>
+                  <%= f.select :gender, ["man", "woman", "couple"], class: "form-select" %>
+                </div>
+                <div class="mb-3">
+                  <%= f.label :looking_for, "Looking for", class: "form-label" %>
+                  <%= f.select :looking, ["woman", "man", "couple"], class: "form-select" %>
+                </div>
+                <div class="mb-3">
+                  <%= f.label :Age, class: "form-label" %>
+                  <%= f.number_field :age, class: "form-control", placeholder: "18" %>
+                </div>
+                <div class="mb-3">
+                  <%= f.label :email, "Email", class: "form-label" %>
+                  <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "example@gmail.com" %>
+                </div>
+                <div class="mb-3">
+                  <%= f.label :password, class: "form-label" %>
+                  <% if @minimum_password_length %>
+                    <em>(<%= @minimum_password_length %> characters minimum)</em>
+                  <% end %>
+                  <%= f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: "******" %>
+                </div>
+                <div class="mb-3">
+                  <%= f.label :password_confirmation, class: "form-label" %>
+                  <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", placeholder: "******" %>
+                </div>
+                <div class="text-center">
+                  <%= f.submit "Sign up", class: "btn btn-danger btn-lg" %>
+                </div>
+              <% end %>
+              <div class="text-center login">
+                <%= render "devise/shared/links" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
