@@ -81,18 +81,20 @@ body {
 
 .sample-comment {
   padding: 1%;
+  position: relative;
 }
 
 .sample-comment h6 {
   font-size: 9px;
-  color:#b50000
+  color:#b50000;
 }
 
 .sample-comment p {
   font-size: 12px;
-  margin-left: -10%;
   margin-top: 2%;
   color: #380d0d;
+  position: absolute;
+  left: 7%;
 }
 
 .sample-comment img {
