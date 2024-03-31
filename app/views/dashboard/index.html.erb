@@ -5,9 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard</title>
   <link rel="stylesheet" href="./assets/dashboard">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 
 </head>
 <body>
+<div class="container-fluid">
+  <div class="row top-actions">
+    <div class="col-3">
+      <img src="./assets/notification" alt="Notification" class="notification subscribe ">
+    </div>
+    <div class="col-3">
+      <h6 class="subscribe">Search</h6>
+    </div>
+    <div class="col-3">
+      <h6 class="subscribe">Matches</h6>
+    </div>
+  </div>
+</div>
+
   <div class="container-fluid ">
     <div class="row">
       <!-- Sidebar -->
@@ -25,29 +40,87 @@
         <a href="#">Tab 2</a>
         <a href="#">Tab 3</a>
       </div>
+
       <!-- Main content area -->
       <div class="col-md-9 offset-md-3">
-        <button class="btn btn-dark d-md-none mb-3 sidebar-toggle-btn" type="button" onclick="toggleSidebar()">More Options</button>
-        <h2>Photo Gallery</h2>
-        <div class="gallery">
-          <div class="gallery-item">
-            <img src="https://via.placeholder.com/200" alt="Image 1">
-            <div class="caption">Caption 1</div>
+        <button class="btn btn-dark d-md-none mb-3 sidebar-toggle-btn" type="button" onclick="toggleSidebar()">More Actions</button>
+        <h5 class="subscribe ">Your Dashboard</h5>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-4">
+              <span class="fas fa-user"></span>
+              <span>Status</span>
+            </div>
+            <!-- Photo icon and label -->
+            <div class="col-4">
+              <span class="fas fa-camera"></span>
+              <span>Photo</span>
+            </div>      
+            <!-- Blog post icon and label -->
+            <div class="col-4">
+              <span class="fas fa-file-alt"></span>
+              <span>Blog Post</span>
+            </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="input-group mb-3">
+              <!-- Input box with placeholder and smile icon -->
+              <input type="text" class="form-control" placeholder="What are you up to?" aria-label="What are you up to?" aria-describedby="basic-addon2">
+              <div class="input-group-append">
+                <span class="input-group-text"><i class="far fa-smile"></i></span>
+              </div>            
+              <!-- Submit button with down arrow icon -->
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button"><i class="fas fa-arrow-down"></i></button>
+              </div>
+            </div>
           </div>
-          <div class="gallery-item">
-            <img src="https://via.placeholder.com/200" alt="Image 2">
-            <div class="caption">Caption 2</div>
-          </div>
-          <!-- Add more gallery items as needed -->
+        </div>
+      </div>
+  <div class="container-fluid">
+    <div class="row mt-3">
+        <!-- Star icon and label -->
+        <div class="col-4">
+          <span class="fas fa-star"></span>
+          <span>Popular</span>
+        </div>
+        <!-- Friends icon and label -->
+        <div class="col-4">
+          <span class="fas fa-users"></span>
+          <span>Friends</span>
         </div>
       </div>
     </div>
+  
+    <div class="container-fluid">   
+      <div class="gallery">
+        <div class="gallery-item">
+          <img class="subscribe" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeZZHxc3_R6ep7gr4HMVtbhij1tRuTMff5Bg&s" alt="Image 1">
+          <span class="caption">Jeny Spark</span>
+          <div class="subscript subscribe">Connect me</div>
+        </div>
+        <div class="gallery-item">
+          <img class="subscribe" src="https://cdn.pixabay.com/photo/2018/05/22/14/00/girl-3421489_640.jpg" alt="Image 2">
+          <span class="caption">Jeny Spark</span>
+          <div class="subscript  subscribe">Connect me</div>
+        </div>
+        <!-- Add more gallery items as needed -->
+      </div>
+    </div>
   </div>
+</div>
 
   <script>
     function toggleSidebar() {
       document.getElementById('sidebar').classList.toggle('show');
     }
+
+    document.body.addEventListener('click', function(e) {
+      if (e.target.classList.contains("subscribe")) {
+        window.location.href = "./infos/new";
+      }
+    });
   </script>
 </body>
 </html>
