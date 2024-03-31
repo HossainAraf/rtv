@@ -46,6 +46,60 @@ body {
   background-color: #b50000;
 }
 
+.add-post {
+  display:none; /* initially hidden, it will display after user will update his status */
+}
+
+.post-added img {
+  width: 25rem;
+}
+
+.media {
+  background-color: #f1f1f1;
+  border-bottom: #f2eaea 2px solid;
+  padding: 1.5%;
+}
+
+.media-body {
+  padding: 10px;
+}
+
+.media-body h5 {
+  border-bottom: #e8dbdb 0.5px solid;
+}
+
+.media img {
+  width: 2rem;
+  height: 2rem;
+}
+
+.post-added img {
+  width: 15rem;
+  height: 15rem;
+  padding: 3%;
+}
+
+.sample-comment {
+  padding: 1%;
+}
+
+.sample-comment h6 {
+  font-size: 9px;
+  color:#b50000
+}
+
+.sample-comment p {
+  font-size: 12px;
+  margin-left: -10%;
+  margin-top: 2%;
+  color: #380d0d;
+}
+
+.sample-comment img {
+  width: 1rem;
+  height: 1rem;
+}
+
 .gallery {
   display: flex;
   flex-wrap: wrap;
@@ -103,11 +157,6 @@ body {
   top: 21px;
   left: 12%;
   z-index: 99999;
-}
-
-.media img {
-  width: 2rem;
-  height: 2rem;
 }
 
 @media (max-width: 768px) {

@@ -63,7 +63,7 @@
             </div>
         </div>
         <div class="row">
-          <div class="col">
+          <div class="col-lg-9">
             <div class="input-group mb-3">
               <!-- Input box with placeholder and smile icon -->
               <input type="text" class="form-control" placeholder="What are you up to?" aria-label="What are you up to?" aria-describedby="basic-addon2">
@@ -94,57 +94,85 @@
     </div>
 
     <div class="container-fluid">
-      <div class="row">
-        <!-- Main content area -->
-        <div class="col-lg-9">
-          <!-- Post form -->
-          <div class="card mb-3">
-            <div class="card-body">
-              <form>
-                <div class="form-group">
-                  <textarea class="form-control" placeholder="What's on your mind?"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Post</button>
-              </form>
+  <div class="row">
+    <!-- Main content area -->
+    <div class="col-lg-9">
+      <!-- Post form -->
+      <div class="card mb-3">
+        <div class="card-body">
+          <form>
+            <div class="form-group">
+              <textarea class="form-control" placeholder="What's on your mind?"></textarea>
             </div>
-          </div>
-
-          <!-- First post -->
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Post Title</h5>
-              <p class="card-text">Post content goes here.</p>
-            </div>
-          </div>
-          <!-- Add more posts as needed -->
+            <button type="submit" class="btn btn-danger">Post</button>
+          </form>
         </div>
+      </div>
 
-        <!-- Second post -->
-        <div class="col-lg-9">
-          <div class="card">
-            <div class="card-body">
-              <!-- Sample post 1 -->
-              <div class="media mb-3">
-                <img src="https://img.freepik.com/premium-photo/attractive-woman-posing-background-french-houses_100800-1926.jpg?size=626&ext=jpg&ga=GA1.1.1991735360.1711673144&semt=ais" class="mr-3 rounded-circle" alt="User Profile Photo">
-                <div class="media-body">
-                  <h5 class="mt-0">Tania Denver</h5>
-                  <p>Sample post content goes here.</p>
-                </div>
+      <!-- First post -->
+      <div class="card add-post">
+        <div class="card-body">
+          <h5 class="card-title">Post Title</h5>
+          <p class="card-text">Post content goes here.</p>
+        </div>
+      </div>
+      <!-- Add more posts as needed -->
+    </div>
+
+    <!-- Sample post 1 -->
+    <div class="col-lg-9 sample-post">
+      <div class="media mb-3">
+        <img src="https://img.freepik.com/premium-photo/attractive-woman-posing-background-french-houses_100800-1926.jpg?size=626&ext=jpg&ga=GA1.1.1991735360.1711673144&semt=ais" class="mr-3 rounded-circle" alt="User Profile Photo">
+        <div class="media-body">
+          <h5 class="mt-0">Tania Denver</h5>
+          <!-- Post image -->
+          <div class="post-added">
+            <img src="https://img.freepik.com/free-photo/portrait-charming-woman-smiling-camera-with-phone_197531-33517.jpg?size=626&ext=jpg&ga=GA1.1.1991735360.1711673144&semt=ais" alt="Post Image">
+          </div>
+          <!-- Like and comment section -->
+          <div class="like-comment-section">
+            <!-- Like count and like button in the same row -->
+            <div class="d-flex align-items-center mb-2">
+              <!-- Like count -->
+              <div class="like-count mr-3">
+                <i class="fas fa-heart"></i> 23
               </div>
-              
-              <!-- Sample post 2 -->
-              <div class="media">
-                <img src="https://img.freepik.com/free-photo/portrait-beautiful-woman-with-pink-sweater_23-2148749910.jpg?size=626&ext=jpg&ga=GA1.1.1991735360.1711673144&semt=ais" class="mr-3 rounded-circle" alt="User Profile Photo">
-                <div class="media-body">
-                  <h5 class="mt-0">Jane Smith</h5>
-                  <p>Another sample post content.</p>
-                </div>
+              <!-- Like button -->
+              <button type="button" class="btn btn-outline-primary btn-sm"><i class="fas fa-heart"></i> Like</button>
+            </div>
+            <!-- Comment input box -->
+            <div class="input-group mt-2">
+              <input type="text" class="form-control" placeholder="Write a comment" aria-label="Write a comment" aria-describedby="button-addon2">
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button" id="button-addon2">Comment</button>
+              </div>
+            </div>
+            <!-- Sample comment -->
+            <div class="media mt-3 sample-comment">
+              <img src="https://img.freepik.com/free-photo/emotional-young-male-with-blue-shirt-standing-gate-with-slight-smile-his-face_181624-27994.jpg?size=626&ext=jpg&ga=GA1.1.1991735360.1711673144&semt=ais" class="mr-3 rounded-circle" alt="Sample User Avatar">
+              <h6 class="mt-0">Spp3boy</h6>
+              <div class="media-body add-comment">
+                <p>Hey lovely</p>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+    
+    <!-- Sample post 2 -->
+    <div class="col-lg-9 sample-post">
+      <div class="media">
+        <img src="https://img.freepik.com/free-photo/portrait-beautiful-woman-with-pink-sweater_23-2148749910.jpg?size=626&ext=jpg&ga=GA1.1.1991735360.1711673144&semt=ais" class="mr-3 rounded-circle" alt="User Profile Photo">
+        <div class="media-body">
+          <h5 class="mt-0">Jane Smith</h5>
+          <p>Another sample post content.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
     <div class="container-fluid">   
       <div class="gallery">
         <div class="gallery-item">
