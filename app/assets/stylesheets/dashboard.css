@@ -226,4 +226,8 @@ body {
   .sidebar {
     left: -250px; /* Initially hidden */
   }
+
+  .popup-container {
+    width: 100%;
+  }
 }
