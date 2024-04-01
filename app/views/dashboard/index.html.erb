@@ -193,11 +193,22 @@
     <div class="row justify-content-center">
       <div class="col-md-12 text-center">
         <h2 id="heading2" class="text-danger">Payment Info:</h2>
+        <button class="btn btn-primary subscribe">Pay Now</button>
       </div>
     </div>
   </div>
 </div>
 <script>
+function toggleSidebar() {
+  document.getElementById('sidebar').classList.toggle('show');
+}
+
+document.body.addEventListener('click', function(e) {
+  if (e.target.classList.contains("subscribe")) {
+    window.location.href = "./infos/new";
+  }
+});
+
   // Define showPopup function in the global scope
   function showPopup() {
     var popupContainer = document.getElementById("popupContainer");
