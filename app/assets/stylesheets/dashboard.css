@@ -19,9 +19,9 @@ body {
 .sidebar {
   background-color: #930000;
   color: white;
-  padding-top: 20px;
+  top: 57px;
   height: 100vh;
-  width: 39%;
+  width: 17%;
   position: fixed;
   transition: left 0.3s;
 }
@@ -180,8 +180,7 @@ body {
   background-image: url('https://img.freepik.com/premium-photo/patron-de-pixeles-barbie_782077-629.jpg?size=626&ext=jpg&ga=GA1.1.1991735360.1711673144&semt=sph');
   background-position: center;
   background-size: cover;
-  /* Add transition */
-  transition-timing-function: linear;
+  transition: bottom 05s;
 }
 
 /* Popup Container Heading */
@@ -224,10 +223,11 @@ body {
 
 @media (max-width: 768px) {
   .sidebar {
-    left: -250px; /* Initially hidden */
+    left: -250px;
+    width:39%;
   }
 
   .popup-container {
-    width: 100%;
+    width: 75%;
   }
 }
