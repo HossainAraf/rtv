@@ -12,13 +12,13 @@
 <div class="container-fluid">
   <div class="row top-actions">
     <div class="col-3">
-      <img src="./assets/notification" alt="Notification" class="notification subscribe ">
+      <img src="./assets/notification" alt="Notification" class="notification trigger-popup ">
     </div>
     <div class="col-3">
-      <h6 class="subscribe">Search</h6>
+      <h6 class="trigger-popup">Search</h6>
     </div>
     <div class="col-3">
-      <h6 class="subscribe">Matches</h6>
+      <h6 class="trigger-popup">Matches</h6>
     </div>
   </div>
 </div>
@@ -44,22 +44,22 @@
       <!-- Main content area -->
       <div class="col-md-9 offset-md-3">
         <button class="btn btn-dark d-md-none mb-3 sidebar-toggle-btn" type="button" onclick="toggleSidebar()">More Features</button>
-        <h5 class="subscribe">Your Dashboard</h5>
+        <h5 class="trigger-popup">Your Dashboard</h5>
         <div class="container-fluid">
           <div class="row">
             <div class="col-4">
-              <span class="fas fa-user subscribe"></span>
-              <span class="subscribe">Status</span>
+              <span class="fas fa-user trigger-popup"></span>
+              <span class="trigger-popup">Status</span>
             </div>
             <!-- Photo icon and label -->
             <div class="col-4">
-              <span class="fas fa-camera subscribe"></span>
-              <span class="subscribe">Photo</span>
+              <span class="fas fa-camera trigger-popup"></span>
+              <span class="trigger-popup">Photo</span>
             </div>      
             <!-- Blog post icon and label -->
             <div class="col-4">
               <span class="fas fa-file-alt"></span>
-              <span class="subscribe">Blog Post</span>
+              <span class="trigger-popup">Blog Post</span>
             </div>
         </div>
         <div class="row">
@@ -72,7 +72,7 @@
               </div>            
               <!-- Submit button with down arrow icon -->
               <div class="input-group-append">
-                <button class="btn btn-outline-secondary subscribe" type="button"><i class="fas fa-arrow-down"></i></button>
+                <button class="btn btn-outline-secondary" type="button"><i class="fas fa-arrow-down trigger-popup"></i></button>
               </div>
             </div>
           </div>
@@ -83,12 +83,12 @@
         <!-- Star icon and label -->
         <div class="col-4">
           <span class="fas fa-star"></span>
-          <span class="subscribe">Popular</span>
+          <span class="trigger-popup">Popular</span>
         </div>
         <!-- Friends icon and label -->
         <div class="col-4">
           <span class="fas fa-users"></span>
-          <span class="subscribe">Friends</span>
+          <span class="trigger-popup">Friends</span>
         </div>
       </div>
     </div>
@@ -104,7 +104,7 @@
             <div class="form-group">
               <textarea class="form-control" placeholder="What's on your mind?"></textarea>
             </div>
-            <button type="submit" class="btn btn-danger subscribe">Post</button>
+            <button type="submit" class="btn btn-danger trigger-popup">Post</button>
           </form>
         </div>
       </div>
@@ -138,13 +138,13 @@
                 <i class="fas fa-heart"></i> 23
               </div>
               <!-- Like button -->
-              <button type="button" class="subscribe btn btn-outline-primary btn-sm"><i class="fas fa-heart"></i> Like</button>
+              <button type="button" class="trigger-popup btn btn-outline-primary btn-sm"><i class="fas fa-heart"></i> Like</button>
             </div>
             <!-- Comment input box -->
             <div class="input-group mt-2">
               <input type="text" class="form-control" placeholder="Write a comment" aria-label="Write a comment" aria-describedby="button-addon2">
               <div class="input-group-append">
-                <button class="btn btn-outline-secondary subscribe" type="button" id="button-addon2">Comment</button>
+                <button class="btn btn-outline-secondary trigger-popup" type="button" id="button-addon2">Comment</button>
               </div>
             </div>
             <!-- Sample comment -->
@@ -166,14 +166,14 @@
     <div class="container-fluid">   
       <div class="gallery">
         <div class="gallery-item">
-          <img class="subscribe" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeZZHxc3_R6ep7gr4HMVtbhij1tRuTMff5Bg&s" alt="Image 1">
+          <img class="trigger-popup" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeZZHxc3_R6ep7gr4HMVtbhij1tRuTMff5Bg&s" alt="Image 1">
           <span class="caption">Jeny Spark</span>
-          <div class="subscript subscribe">Connect me</div>
+          <div class="subscript trigger-popup">Connect me</div>
         </div>
         <div class="gallery-item">
-          <img class="subscribe" src="https://cdn.pixabay.com/photo/2018/05/22/14/00/girl-3421489_640.jpg" alt="Image 2">
+          <img class="trigger-popup" src="https://cdn.pixabay.com/photo/2018/05/22/14/00/girl-3421489_640.jpg" alt="Image 2">
           <span class="caption">Jeny Spark</span>
-          <div class="subscript  subscribe">Connect me</div>
+          <div class="subscript  trigger-popup">Connect me</div>
         </div>
         <!-- Add more gallery items as needed -->
       </div>
@@ -181,16 +181,53 @@
   </div>
 </div>
 
-  <script>
-    function toggleSidebar() {
-      document.getElementById('sidebar').classList.toggle('show');
+<!-- Popup Container -->
+<div id="popupContainer" class="popup-container">
+  <div class="container-fluid my-3 py-30">
+    <div class="row justify-content-center">
+      <div class="col-md-12 text-center">
+        <h2 id="heading2" class="text-primary">Unlock all features with $2 only:</h2>
+      </div>
+    </div>
+  
+    <div class="row justify-content-center">
+      <div class="col-md-12 text-center">
+        <h2 id="heading2" class="text-danger">Payment Info:</h2>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  // Define showPopup function in the global scope
+  function showPopup() {
+    var popupContainer = document.getElementById("popupContainer");
+    popupContainer.style.display = "block";
+  }
+
+  document.body.addEventListener('click', function(e) {
+    if (e.target.classList.contains("trigger-popup")) {
+      showPopup();
+    }
+  });
+
+  document.addEventListener("DOMContentLoaded", function() {
+    var triggerElement = document.querySelector('.trigger-popup');
+    var popupContainer = document.getElementById("popupContainer");
+
+    // Function to hide the popup
+    function hidePopup() {
+      popupContainer.style.display = "none";
     }
 
-    document.body.addEventListener('click', function(e) {
-      if (e.target.classList.contains("subscribe")) {
-        window.location.href = "./infos/new";
+    // Event listener to hide the popup when clicking outside the popup content
+    popupContainer.addEventListener("click", function(event) {
+      if (event.target === popupContainer) {
+        hidePopup();
       }
     });
-  </script>
+  });
+</script>
+
+
 </body>
 </html>

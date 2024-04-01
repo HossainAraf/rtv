@@ -161,6 +161,19 @@ body {
   z-index: 99999;
 }
 
+.popup-container {
+  display: none; /* Hide the popup by default */
+  position: fixed;
+  z-index: 9999999; /* Ensure the popup is on top of other content */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4); /* Black background with opacity */
+}
+
+
 @media (max-width: 768px) {
   .sidebar {
     left: -250px; /* Initially hidden */
