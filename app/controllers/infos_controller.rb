@@ -1,5 +1,6 @@
 class InfosController < ApplicationController
   before_action :set_info, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, only: [:index]
 
   # GET /infos or /infos.json
   def index
