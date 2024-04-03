@@ -1,0 +1,233 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #b50000;
+}
+
+.notification {
+  width: 2rem;
+}
+
+.top-actions {
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem;
+  color:blanchedalmond;
+  cursor: pointer;
+  /* font-size: ; */
+}
+
+.sidebar {
+  background-color: #930000;
+  color: white;
+  top: 57px;
+  height: 100vh;
+  width: 17%;
+  position: fixed;
+  transition: left 0.3s;
+}
+
+.sidebar.show {
+  left: 0;
+  z-index: 9999999;
+}
+
+.sidebar a {
+  display: block;
+  
+  border-bottom: 1px solid #b50000;
+  box-sizing: border-box;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #fff;
+  transition: background-color 0.3s;
+}
+
+.sidebar a:hover {
+  background-color: #b50000;
+}
+
+.add-post {
+  display:none; /* initially hidden, it will display after user will update his status */
+}
+
+.post-added img {
+  width: 25rem;
+}
+
+.media {
+  background-color: #f1f1f1;
+  border-bottom: #f2eaea 2px solid;
+  padding: 1.5%;
+}
+
+.media-body {
+  padding: 10px;
+}
+
+.media-body h5 {
+  border-bottom: #e8dbdb 0.5px solid;
+}
+
+.media img {
+  width: 2rem;
+  height: 2rem;
+}
+
+.post-added img {
+  width: 15rem;
+  height: 15rem;
+  padding: 3%;
+}
+
+.sample-comment {
+  padding: 1%;
+  position: relative;
+}
+
+.sample-comment h6 {
+  font-size: 9px;
+  color:#b50000;
+}
+
+.sample-comment p {
+  font-size: 12px;
+  margin-top: 2%;
+  color: #380d0d;
+  position: absolute;
+  left: 2%;
+}
+
+.sample-comment img {
+  width: 1rem;
+  height: 1rem;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.gallery-item {
+  margin: 10px;
+  width: 15rem;
+  height: 15rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
+}
+
+.gallery-item img {
+  width: 99%;
+  height: 99%;
+  transition: transform 0.3s;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+.subscript {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 8px;
+  color: white;
+  font-size: 14px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.gallery-item:hover .subscript {
+  opacity: 1;
+}
+
+.sidebar-toggle-btn {
+  position: fixed;
+  background-color: transparent;
+  top: 5px;
+  left: 5px;
+  z-index: 99999;
+}
+
+/* Popup Wrapper */
+#popup-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+/* Popup Container */
+.popup-container {
+  display: none;
+  position: fixed;
+  z-index: 9999999;
+  top: 10rem;
+  height: 30%;
+  overflow: auto;
+  background-color: rgba(241, 238, 241, 0.9); /* Adjust background color with opacity */
+  border-radius: 5%;
+  background-image: url('https://img.freepik.com/premium-photo/patron-de-pixeles-barbie_782077-629.jpg?size=626&ext=jpg&ga=GA1.1.1991735360.1711673144&semt=sph');
+  background-position: center;
+  background-size: cover;
+  transition: bottom 05s;
+}
+
+/* Popup Container Heading */
+.popup-container #heading2 {
+  text-align: center;
+  color: #fff;
+}
+
+/* Show popup animation */
+.popup-show {
+  display: block;
+  animation: fade-in 0.3s ease-in-out
+}
+
+/* Hide popup animation */
+.popup-hide {
+  animation: fade-out 0.3s ease-in-out;
+}
+
+/* Keyframe animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+  
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .sidebar {
+    left: -250px;
+    width:39%;
+  }
+
+  .popup-container {
+    width: 75%;
+  }
+}
