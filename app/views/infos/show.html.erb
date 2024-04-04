@@ -1,9 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>5-Digit Input Field</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Adjust styling as needed */
+    .input-group input[type="text"] {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <h2>OTP</h2>
+      <form>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" maxlength="1" size="1" id="digit1">
+          <input type="text" class="form-control" maxlength="1" size="1" id="digit2">
+          <input type="text" class="form-control" maxlength="1" size="1" id="digit3">
+          <input type="text" class="form-control" maxlength="1" size="1" id="digit4">
+          <input type="text" class="form-control" maxlength="1" size="1" id="digit5">
+          <input type="text" class="form-control" maxlength="1" size="1" id="digit6">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
 <p style="color: green"><%= notice %></p>
 
 <%= render @info %>
 <p>Zip: <%= @info.zip %></p>
 
 
+# <h2>Congrats!</h2>
+# <h3>You have unlock 1 page</h3>
+# <%= link_to "View nude images", pics_path, class: "btn btn-primary" %>
+
+# <h4>For more features you are welcome to join our premium package: $50/month</h4>
+
+
+
 <div id="infos-links">
   <%= link_to "Edit this info", edit_info_path(@info) %> |
 </div>
+<!-- Bootstrap JS (Optional, only if you need JavaScript functionalities) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

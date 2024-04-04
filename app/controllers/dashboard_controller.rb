@@ -3,4 +3,8 @@ class DashboardController < ApplicationController
   
   def index
   end
+
+  def pics
+  end
+  
 end
