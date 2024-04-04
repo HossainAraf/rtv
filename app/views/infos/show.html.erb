@@ -1,6 +1,8 @@
 <p style="color: green"><%= notice %></p>
 
 <%= render @info %>
+<p>Zip: <%= @info.zip %></p>
+
 
 <div id="infos-links">
   <%= link_to "Edit this info", edit_info_path(@info) %> |
