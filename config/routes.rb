@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'admin_panel/index'
   get 'six_digit_inputs/new'
   get 'six_digit_inputs/create'
   resources :feedbacks
@@ -13,6 +14,10 @@ Rails.application.routes.draw do
 
   resources :six_digit_inputs, only: [:create]
   get 'output', to: 'six_digit_inputs#output'
+
+  resources :admin_panel, only: [:index]
+  get 'admin', to: 'admin_panel#index'
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
