@@ -35,7 +35,7 @@ body {
 }
 
 .image-container img {
-  width: 20rem;
+  width: 15rem;
   height: 20rem;
   border-radius: 10px;
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
@@ -59,21 +59,29 @@ body {
 }
 
 .footer {
-  background-color: #2b0303;
+  background-color: #4f3767;
   text-align: center;
 }
 
-.rounded-circle {
-  width: 100%;
+.action p {
+  margin-right: 2%;
 }
+
+.action-img {
+  margin-right: 3%;
+}
+
+.rounded-circle {
+  width: 131%;
+}
+
 
 @media (max-width: 480px) {
   #home {
     padding: 1%;
   }
 
-  /* .image-container-wrapper {
-    margin-top: 1%;
-    padding-top: 2%;
-  } */
+  #banner {
+    background-repeat: round;
+  }
 }
