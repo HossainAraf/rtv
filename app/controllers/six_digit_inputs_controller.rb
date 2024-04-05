@@ -12,6 +12,11 @@ class SixDigitInputsController < ApplicationController
     end
   end
 
+  def output
+    # Retrieve the latest sixDigit value or perform any necessary calculations
+    @six_digit_value = SixDigitInput.last.value
+  end
+
   private
 
   def six_digit_input_params
