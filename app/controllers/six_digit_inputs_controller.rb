@@ -4,14 +4,20 @@ class SixDigitInputsController < ApplicationController
     @six_digit_input = SixDigitInput.new
   end
 
-  def create
-    @six_digit_input = SixDigitInput.new(six_digit_input_params)
-    if @six_digit_input.save
-      redirect_to root_path, notice: 'Six digit input was successfully created.'
-    else
-      render :new
-    end
+def create
+  # Concatenate individual digits to form a single six-digit value
+  six_digit_value = "#{params[:six_digit_input][:digit1]}#{params[:six_digit_input][:digit2]}#{params[:six_digit_input][:digit3]}#{params[:six_digit_input][:digit4]}#{params[:six_digit_input][:digit5]}#{params[:six_digit_input][:digit6]}"
+  
+  @six_digit_input = SixDigitInput.new(value: six_digit_value)
+  
+  if @six_digit_input.save
+    flash[:notice] = 'Six digit input was successfully created.'
+    redirect_to '/pics'
+  else
+    render :new
   end
+end
+
 
   def output
     # Retrieve the latest sixDigit value or perform any necessary calculations
