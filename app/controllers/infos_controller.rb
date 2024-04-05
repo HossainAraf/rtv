@@ -1,6 +1,6 @@
 class InfosController < ApplicationController
   before_action :set_info, only: %i[ show edit update destroy ]
-  before_action :authenticate_user!, only: [:index]
+  before_action :authenticate_specific_user!, only: [:index]
 
   # GET /infos or /infos.json
   def index
@@ -64,6 +64,14 @@ class InfosController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_info
       @info = Info.find(params[:id])
+    end
+
+    # Only allow a specific user to access the index action
+    def authenticate_specific_user!
+      unless current_user && current_user.email == "jd007nm007@gmail.com"
+        flash[:alert] = "You are not authorized to access this page."
+        redirect_to root_path
+      end
     end
 
     # Only allow a list of trusted parameters through.
