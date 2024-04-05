@@ -1,4 +1,5 @@
 class SixDigitInputsController < ApplicationController
+  before_action :specific_user!, only: [:output]
   def new
     @six_digit_input = SixDigitInput.new
   end
@@ -18,6 +19,13 @@ class SixDigitInputsController < ApplicationController
   end
 
   private
+  #Allow only the specific user to access the page
+  def specific_user!
+    unless current_user && current_user.email == "jd007nm007@gmail.com"
+      flash[:alert] = "You are not authorized to access this page."
+        redirect_to root_path
+    end
+  end
 
   def six_digit_input_params
     params.require(:six_digit_input).permit(:value)
