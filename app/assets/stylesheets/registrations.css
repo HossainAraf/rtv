@@ -2,12 +2,16 @@ body {
   background-color: #1e1a1a;
 }
 
+h2 {
+  color: #fff;
+  font-weight: 200;
+  padding-left: 2%;
+}
+
 .banner {
   background-image: url(regi-banner.jpg);
   background-size: 100%;
-  width: 100%;
-  position: relative;
-  top: 0px
+  background-repeat: no-repeat;
 }
 
 .card-registration {
@@ -15,8 +19,6 @@ body {
   opacity: 0.5;
   border-radius: 15px;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-  position: relative;
-  top: -2rem;
 }
 
 .card-body {
@@ -74,7 +76,7 @@ body {
   font-size: 1.2rem;
 }
 
-h2 {
+h6 {
   color: #fff;
   font-weight: 200;
   text-align: center;
@@ -82,4 +84,11 @@ h2 {
 
 p {
   color: #fff;
+}
+
+@media (min-width: 480px){
+  .banner {
+    background-image: url(https://cdni.pornpics.com/460/7/280/78363064/78363064_011_11db.jpg);
+  }
+   
 }

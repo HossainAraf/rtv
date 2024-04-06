@@ -14,13 +14,12 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 
 #banner {
   background-image: url('1.gif');
-  background-size: 100%;
-  background-repeat: no-repeat;
+  background-size: cover;
   padding: 10% 1%;
 }
 
@@ -58,17 +57,23 @@ body {
   color: #00ff00;
 }
 
-.footer {
-  background-color: #4f3767;
-  text-align: center;
+.action-container {
+ display: flex; 
+}
+
+.action {
+  flex-basis: 40%;
 }
 
 .action p {
   margin-right: 2%;
+  font-size: smaller;
 }
 
 .action-img {
   margin-right: 3%;
+  flex-basis: 60%;
+  width: 100%;
 }
 
 .rounded-circle {
@@ -83,5 +88,6 @@ body {
 
   #banner {
     background-repeat: round;
+    padding: 1%;
   }
 }
