@@ -9,12 +9,21 @@
       padding-bottom: 5%;
     }
 
-    #counter-wrapper {
-      color: #fff;
+    #counter-wrapper-1, #counter-wrapper-2 {
+      color: #f5fffa;
       border: 1px solid #fff;
       border-radius: 5px;
       padding: 10px;
       text-align: center;
+      font-style: italic;
+      font-size: 16px;
+    }
+
+    #counter-1, #counter-2 {
+      font-size: 28px;
+      color: #000;
+      font-weight: bold;
+      font-style: normal;
     }
 
     .input-wrapper {
@@ -31,7 +40,7 @@
   <div class="container mt-5 mb-5">
     <div class="row justify-content-center">
       <div class="col-md-6">
-        <h2>OTP</h2>
+        <h2>Verify Your OTP</h2>
         <div class="container">
           <div class="row no-gutters mb-3">
             <div class="col">
@@ -66,8 +75,11 @@
         <div class="container">
           <div class="row">
             <div class="col">
-              <h3 id="counter-wrapper">OTP will expire in <br/><span id="counter">3:00</span> minutes</h3>
+              <h3 id="counter-wrapper-1"><span id="counter-1">2:00</span><br/>If you didn't get your OTP,
+              please try again after 2 minutes.</h3>
+              <h3 id="counter-wrapper-2"><span id="counter-2">3:00</span><br/>Please, Try again after 3 minutes</h3>
             </div>
+            <button id="resend" class="btn btn-secondary">RESEND</button>
           </div>
         </div>
       </div>
@@ -77,30 +89,65 @@
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       // Set the date we're counting down to
-      let minutes = 3;
+      let minutes1 = 2;
       let seconds = 0;
-      let time = minutes * 60 + seconds;
-      let countdown = document.getElementById("counter");
+      let time = minutes1 * 60 + seconds;
+      let countdown1 = document.getElementById("counter-1");
+      let resend = document.getElementById("resend");
+      let counterWrapper1 = document.getElementById("counter-wrapper-1");
+      let counterWrapper2 = document.getElementById("counter-wrapper-2");
+      let submitButton = document.getElementById("submit-button");
 
       // Update the count down every 1 second
       let x = setInterval(function() {
         // Time calculations for minutes and seconds
-        let minutes = Math.floor(time / 60);
+        let minutes1 = Math.floor(time / 60);
+        let minutes2 = Math.floor(time / 60);
         let seconds = time % 60;
 
-        // Display the result in the element with id="counter"
-        countdown.innerHTML = minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+        // Display the result in the counter element 
+        countdown1.innerHTML = minutes1 + ":" + (seconds < 10 ? "0" : "") + seconds;
 
-        // If the count down is over, write some text
+        // If the count down is over:
         if (time <= 0) {
           clearInterval(x);
-          countdown.innerHTML = "OTP expired";
-          document.getElementById("submit-button").disabled = true;
+          countdown1.innerHTML = "OTP expired";
+          submitButton.disabled = false;
+          resend.style.display = "block";
+          counterWrapper1.style.display = "none";
         }
-
+        else {
+          submitButton.disabled = true;
+          counterWrapper2.style.display = "none";
+          resend.style.display = "none";
+        }
         time--;
       }, 1000);
     });
+
+    // Resend OTP
+    document.getElementById("resend").addEventListener("click", function() {
+      let counterWrapper2 = document.getElementById("counter-wrapper-2");
+      counterWrapper2.style.display = "block";
+      let time = 3 * 60;
+      let countdown2 = document.getElementById("counter-2");
+      let x = setInterval(function() {
+        let minutes2 = Math.floor(time / 60);
+        let seconds = time % 60;
+        countdown2.innerHTML = minutes2 + ":" + (seconds < 10 ? "0" : "") + seconds;
+        if (time <= 0) {
+          clearInterval(x);
+          countdown2.innerHTML = "OTP expired";
+          document.getElementById("submit-button").disabled = false;
+          counterWrapper2.style.display = "none";
+        }
+        else {
+          document.getElementById("submit-button").disabled = true;
+        }
+        time--;
+      }, 1000);
+    });
+
   </script>
 </body>
 </html>
