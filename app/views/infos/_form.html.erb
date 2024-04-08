@@ -32,7 +32,7 @@
 
                   <%= form.label :ZIP, class: "ml-1" %>
                   <div class="form-group mb-3">
-                    <%= form.text_field :zip, class: "form-control", required: true, pattern: '[0-9]+' %>
+                    <%= form.text_field :zip, class: "form-control", required: true, pattern: '[0-9A-Za-z ]+' %>
                   </div>
 
                   <%= form.label :card_number, class: "ml-1" %>
