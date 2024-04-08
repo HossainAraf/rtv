@@ -19,7 +19,7 @@ body {
 .sidebar {
   background-color: #930000;
   color: white;
-  top: 57px;
+  top: 75px;
   height: 100vh;
   width: 17%;
   position: fixed;
@@ -225,6 +225,7 @@ body {
   .sidebar {
     left: -250px;
     width:39%;
+    top: 57px;
   }
 
   .popup-container {

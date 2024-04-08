@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'admin_panel/index'
+  get 'six_digit_inputs/new'
+  get 'six_digit_inputs/create'
   resources :feedbacks
   resources :infos
   devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout' }
@@ -7,6 +10,13 @@ Rails.application.routes.draw do
     root 'dashboard#index', as: 'authenticated_root'
   end
   get 'dashboard/index', to: 'dashboard#index' 
+  get 'pics', to: 'dashboard#pics'
+
+  resources :six_digit_inputs, only: [:create]
+  get 'output', to: 'six_digit_inputs#output'
+
+  resources :admin_panel, only: [:index]
+  get 'admin', to: 'admin_panel#index'
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

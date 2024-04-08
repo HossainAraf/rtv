@@ -1,4 +1,19 @@
 .nav {
-  background-color: #032f3c;
+  background: linear-gradient(to right, #09070a, #744d99);
   padding-left: 3%;
+}
+
+.nav h4 {
+  margin-left: 35%;
+  color: #c6e805;
+  padding: 1%;
+}
+
+.nav li a {
+  color: #fff;
+  padding: 1%;
+}
+
+.nav li a:hover {
+  color: #c6e805;
 }

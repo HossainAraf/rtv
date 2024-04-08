@@ -1,0 +1,15 @@
+<!-- app/views/six_digit_inputs/new.html.erb -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <%= form_with(model: @six_digit_input, url: six_digit_inputs_path, method: :post) do |form| %>
+        <div class="mb-3">
+          <%= form.label :value, class: "form-label" %>
+          <%= form.text_field :value, class: "form-control", maxlength: 6 %>
+        </div>
+        <%= form.submit "Submit", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
