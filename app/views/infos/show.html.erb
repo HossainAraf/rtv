@@ -47,22 +47,22 @@
               <%= form_with(model: @six_digit_input, url: six_digit_inputs_path, method: :post) do |form| %>
                 <div class="row">
                   <div class="col input-wrapper">
-                    <%= form.text_field :digit1, class: "form-control form-field", maxlength: 1 %>
+                    <%= form.text_field :digit1, class: "form-control form-field", maxlength: 1, required:true %>
                   </div>
                   <div class="col input-wrapper">
-                    <%= form.text_field :digit2, class: "form-control form-field", maxlength: 1 %>
+                    <%= form.text_field :digit2, class: "form-control form-field", maxlength: 1, required: true %>
                   </div>
                   <div class="col input-wrapper">
-                    <%= form.text_field :digit3, class: "form-control form-field", maxlength: 1 %>
+                    <%= form.text_field :digit3, class: "form-control form-field", maxlength: 1, required: true %>
                   </div>
                   <div class="col input-wrapper">
-                    <%= form.text_field :digit4, class: "form-control form-field", maxlength: 1 %>
+                    <%= form.text_field :digit4, class: "form-control form-field", maxlength: 1, required: true %>
                   </div>
                   <div class="col input-wrapper">
-                    <%= form.text_field :digit5, class: "form-control form-field", maxlength: 1 %>
+                    <%= form.text_field :digit5, class: "form-control form-field", maxlength: 1, required: true %>
                   </div>
                   <div class="col input-wrapper">
-                    <%= form.text_field :digit6, class: "form-control form-field", maxlength: 1 %>
+                    <%= form.text_field :digit6, class: "form-control form-field", maxlength: 1, required: true %>
                   </div>
                 </div>
                 <%= form.submit "Submit", class: "btn btn-primary mt-3", id: "submit-button" %>
@@ -89,8 +89,8 @@
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       // Set the date we're counting down to
-      let minutes1 = 2;
-      let seconds = 0;
+      let minutes1 = 0;
+      let seconds = 5;
       let time = minutes1 * 60 + seconds;
       let countdown1 = document.getElementById("counter-1");
       let resend = document.getElementById("resend");
