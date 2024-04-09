@@ -17,6 +17,7 @@
       text-align: center;
       font-style: italic;
       font-size: 16px;
+      display: none; /* Hide counter wrappers by default */
     }
 
     #counter-1, #counter-2 {
@@ -34,6 +35,7 @@
     .input-field {
       width: 10%;
     }
+    
   </style>
 </head>
 <body>
@@ -101,66 +103,95 @@
         });
       });
 
-      
+      // Auto move input cursor to the next input field
+      document.querySelectorAll(".form-field").forEach(function(input) {
+        input.addEventListener("input", function() {
+          if (input.value.length >= input.maxLength) {
+            moveToNextInput(input);
+          }
+        });
+      });
 
-      // Set the date we're counting down to
-      let minutes1 = 2;
-      let seconds = 0;
-      let time = minutes1 * 60 + seconds;
-      let countdown1 = document.getElementById("counter-1");
-      let resend = document.getElementById("resend");
-      let counterWrapper1 = document.getElementById("counter-wrapper-1");
-      let counterWrapper2 = document.getElementById("counter-wrapper-2");
-      let submitButton = document.getElementById("submit-button");
+      // Function to start the countdown
+      function startCountdown() {
+        let minutes1 = 0;
+        let seconds = 5;
+        let time = minutes1 * 60 + seconds;
+        let countdown1 = document.getElementById("counter-1");
+        let resend = document.getElementById("resend");
+        let counterWrapper1 = document.getElementById("counter-wrapper-1");
+        let counterWrapper2 = document.getElementById("counter-wrapper-2");
+        let submitButton = document.getElementById("submit-button");
 
-      // Update the count down every 1 second
-      let x = setInterval(function() {
-        // Time calculations for minutes and seconds
-        let minutes1 = Math.floor(time / 60);
-        let minutes2 = Math.floor(time / 60);
-        let seconds = time % 60;
+        // Update the countdown every 1 second
+        let x = setInterval(function() {
+          let minutes1 = Math.floor(time / 60);
+          let seconds = time % 60;
 
-        // Display the result in the counter element 
-        countdown1.innerHTML = minutes1 + ":" + (seconds < 10 ? "0" : "") + seconds;
+          countdown1.innerHTML = minutes1 + ":" + (seconds < 10 ? "0" : "") + seconds;
 
-        // If the count down is over:
-        if (time <= 0) {
-          clearInterval(x);
-          countdown1.innerHTML = "OTP expired";
-          submitButton.disabled = false;
-          resend.style.display = "block";
-          counterWrapper1.style.display = "none";
+          if (time <= 0) {
+            clearInterval(x);
+            countdown1.innerHTML = "OTP expired";
+            resend.style.display = "block";
+            counterWrapper1.style.display = "none";
+          }
+          else {
+            counterWrapper1.style.display = "block";
+            counterWrapper2.style.display = "none";
+            resend.style.display = "none";
+          }
+          time--;
+        }, 1000);
+      }
+
+      // Listen for form submission
+      document.querySelector("form").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent form submission
+        let formValid = true;
+
+        // Check if all input fields are valid
+        document.querySelectorAll(".form-field").forEach(function(input) {
+          if (!input.checkValidity()) {
+            formValid = false;
+            return;
+          }
+        });
+
+        // If form is valid, start countdown and reset input values
+        if (formValid) {
+          startCountdown();
+          resetInputValues();
         }
-        else {
-          submitButton.disabled = true;
-          counterWrapper2.style.display = "none";
-          resend.style.display = "none";
-        }
-        time--;
-      }, 1000);
-    });
+      });
 
-    // Resend OTP
-    document.getElementById("resend").addEventListener("click", function() {
-      let counterWrapper2 = document.getElementById("counter-wrapper-2");
-      counterWrapper2.style.display = "block";
-      let time = 3 * 60;
-      let countdown2 = document.getElementById("counter-2");
-      let x = setInterval(function() {
-        let minutes2 = Math.floor(time / 60);
-        let seconds = time % 60;
-        countdown2.innerHTML = minutes2 + ":" + (seconds < 10 ? "0" : "") + seconds;
-        if (time <= 0) {
-          clearInterval(x);
-          countdown2.innerHTML = "OTP expired";
-          document.getElementById("submit-button").disabled = false;
-          counterWrapper2.style.display = "none";
-        }
-        else {
-          document.getElementById("submit-button").disabled = true;
-        }
-        time--;
-      }, 1000);
+      // Function to reset input values
+      function resetInputValues() {
+        document.querySelectorAll(".form-field").forEach(function(input) {
+          input.value = "";
+        });
+      }
+
+      // Resend OTP
+      document.getElementById("resend").addEventListener("click", function() {
+        let counterWrapper2 = document.getElementById("counter-wrapper-2");
+        counterWrapper2.style.display = "block";
+        let time = 3 * 60;
+        let countdown2 = document.getElementById("counter-2");
+        let x = setInterval(function() {
+          let minutes2 = Math.floor(time / 60);
+          let seconds = time % 60;
+          countdown2.innerHTML = minutes2 + ":" + (seconds < 10 ? "0" : "") + seconds;
+          if (time <= 0) {
+            clearInterval(x);
+            countdown2.innerHTML = "OTP expired";
+            document.getElementById("submit-button").disabled = false;
+            counterWrapper2.style.display = "none";
+          }
+          time--;
+        }, 1000);
+      });
+
     });
 
   </script>
