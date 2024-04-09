@@ -89,6 +89,20 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", function() {
+      // Move cursor to the next input field
+      document.querySelectorAll(".form-field").forEach(function(input, index, inputs) {
+        input.addEventListener("input", function() {
+          if (input.value.length >= input.maxLength) {
+            let next = inputs[index + 1];
+            if (next) {
+              next.focus();
+            }
+          }
+        });
+      });
+
+      
+
       // Set the date we're counting down to
       let minutes1 = 2;
       let seconds = 0;
