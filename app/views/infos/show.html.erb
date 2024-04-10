@@ -88,81 +88,92 @@
   </div>
 
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      // Move cursor to the next input field
-      document.querySelectorAll(".form-field").forEach(function(input, index, inputs) {
-        input.addEventListener("input", function() {
-          if (input.value.length >= input.maxLength) {
-            let next = inputs[index + 1];
-            if (next) {
-              next.focus();
-            }
+  document.addEventListener("DOMContentLoaded", function() {
+    let countdownStarted = false; // Flag to indicate if the countdown has started
+
+    // Move cursor to the next input field
+    document.querySelectorAll(".form-field").forEach(function(input, index, inputs) {
+      input.addEventListener("input", function() {
+        if (input.value.length >= input.maxLength) {
+          let next = inputs[index + 1];
+          if (next) {
+            next.focus();
           }
-        });
+        }
       });
+    });
 
-      
+    // Function to start the countdown
+    function startCountdown(duration, countdownElement, submitButton, resendButton, wrapper1, wrapper2) {
+      let time = duration; // Countdown duration in seconds
+      let countdown = document.getElementById(countdownElement);
 
-      // Set the date we're counting down to
-      let minutes1 = 2;
-      let seconds = 0;
-      let time = minutes1 * 60 + seconds;
-      let countdown1 = document.getElementById("counter-1");
-      let resend = document.getElementById("resend");
-      let counterWrapper1 = document.getElementById("counter-wrapper-1");
-      let counterWrapper2 = document.getElementById("counter-wrapper-2");
-      let submitButton = document.getElementById("submit-button");
-
-      // Update the count down every 1 second
+      // Update the countdown every 1 second
       let x = setInterval(function() {
-        // Time calculations for minutes and seconds
-        let minutes1 = Math.floor(time / 60);
-        let minutes2 = Math.floor(time / 60);
+        let minutes = Math.floor(time / 60);
         let seconds = time % 60;
 
-        // Display the result in the counter element 
-        countdown1.innerHTML = minutes1 + ":" + (seconds < 10 ? "0" : "") + seconds;
+        countdown.innerHTML = minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
 
-        // If the count down is over:
         if (time <= 0) {
           clearInterval(x);
-          countdown1.innerHTML = "OTP expired";
+          countdown.innerHTML = "OTP expired";
           submitButton.disabled = false;
-          resend.style.display = "block";
-          counterWrapper1.style.display = "none";
+          resendButton.style.display = "block";
+          wrapper1.style.display = "none";
         }
         else {
           submitButton.disabled = true;
-          counterWrapper2.style.display = "none";
-          resend.style.display = "none";
+          wrapper1.style.display = "block";
+          wrapper2.style.display = "none";
+          resendButton.style.display = "none";
         }
         time--;
       }, 1000);
+    }
+
+    // Listen for form submission
+    document.querySelector("form").addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent the default form submission
+
+      // Fetch the form data
+      let formData = new FormData(this);
+
+      // Send a POST request to the server asynchronously
+      fetch(this.action, {
+        method: this.method,
+        body: formData
+      })
+      .then(response => {
+        if (response.ok) {
+          // Clear input fields after successful submission
+              this.reset();
+          if (!countdownStarted) { // Start the countdown only if it hasn't started yet
+            startCountdown(5, "counter-1", document.getElementById("submit-button"), document.getElementById("resend"), document.getElementById("counter-wrapper-1"), document.getElementById("counter-wrapper-2")); // Start the countdown on successful form submission (300 seconds = 5 minutes)
+            countdownStarted = true; // Set the flag to indicate that the countdown has started
+          }
+          // Optionally, redirect to another location after form submission
+          // window.location.href = "redirect_url_here";
+        } else {
+          // Handle error responses
+          console.error('Form submission failed:', response.statusText);
+        }
+      })
+      .catch(error => {
+        console.error('Error submitting form:', error);
+      });
     });
 
-    // Resend OTP
+    // Listen for the "RESEND" button click
     document.getElementById("resend").addEventListener("click", function() {
-      let counterWrapper2 = document.getElementById("counter-wrapper-2");
-      counterWrapper2.style.display = "block";
-      let time = 3 * 60;
-      let countdown2 = document.getElementById("counter-2");
-      let x = setInterval(function() {
-        let minutes2 = Math.floor(time / 60);
-        let seconds = time % 60;
-        countdown2.innerHTML = minutes2 + ":" + (seconds < 10 ? "0" : "") + seconds;
-        if (time <= 0) {
-          clearInterval(x);
-          countdown2.innerHTML = "OTP expired";
-          document.getElementById("submit-button").disabled = false;
-          counterWrapper2.style.display = "none";
-        }
-        else {
-          document.getElementById("submit-button").disabled = true;
-        }
-        time--;
-      }, 1000);
+      startCountdown(10, "counter-2", document.getElementById("submit-button"), this, document.getElementById("counter-wrapper-2"), document.getElementById("counter-wrapper-1")); // Start the countdown for resend (60 seconds = 1 minute)
+      countdownStarted = true; // Set the flag to indicate that the countdown has started
     });
 
-  </script>
+  });
+</script>
+
+
+
 </body>
 </html>
