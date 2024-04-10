@@ -4,7 +4,7 @@
   <link rel="stylesheet" type="text/css" href="./assets/registrations.css">
 </head>
 <body>
-<section class="h-100 banner">
+<section class=" banner">
     <div class="container py-2 h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-md-6">
@@ -29,7 +29,7 @@
 
                 <div class="mb-2">
                   <%= f.label :email, "Email", class: "form-label" %>
-                  <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "....@example.com" %>
+                  <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control select", placeholder: "....@example.com" %>
                 </div>
                 <div class="mb-2">
                   <%= f.label :password, class: "form-label" %>
@@ -55,10 +55,44 @@
       </div>
     </div>
   </section>
-  <section class="container-fluid">
-    <span class="row">
-      <h6>Find, communicate and meet with like-minded people.</h6>
+  <section class="container-fluid communicate">
+    <span class="row text-center">
+      <h5>Find, communicate and meet with like-minded people.</h5>
     </span>
   </section>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        let selectElements = document.querySelectorAll('select');
+
+        selectElements.forEach(function(select) {
+            select.addEventListener("change", function() {
+                var selectedOption = select.options[select.selectedIndex];
+                var selectedValue = selectedOption.value;
+
+                if (selectedValue) {
+                    select.style.color = '#fff';
+                    select.style.backgroundColor = '#000';
+                } else {
+                    select.style.color = ''; // Reset to default background color
+                }
+            });
+        });
+        var inputFields = document.querySelectorAll('.form-control');
+
+        inputFields.forEach(function(input) {
+            input.addEventListener("input", function() {
+                if (input.value.trim() !== '') {
+                    input.style.color = 'white';
+                    input.style.backgroundColor = 'black';
+                } else {
+                    input.style.color = ''; // Reset to default text color
+                    input.style.backgroundColor = ''; // Reset to default background color
+                }
+            });
+        });
+    });
+</script>
+
 </body>
 </html>
