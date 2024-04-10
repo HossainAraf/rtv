@@ -67,8 +67,8 @@
 
         selectElements.forEach(function(select) {
             select.addEventListener("change", function() {
-                var selectedOption = select.options[select.selectedIndex];
-                var selectedValue = selectedOption.value;
+                let selectedOption = select.options[select.selectedIndex];
+                let selectedValue = selectedOption.value;
 
                 if (selectedValue) {
                     select.style.color = '#fff';
@@ -78,7 +78,7 @@
                 }
             });
         });
-        var inputFields = document.querySelectorAll('.form-control');
+        let inputFields = document.querySelectorAll('.form-control');
 
         inputFields.forEach(function(input) {
             input.addEventListener("input", function() {
@@ -86,8 +86,8 @@
                     input.style.color = 'white';
                     input.style.backgroundColor = 'black';
                 } else {
-                    input.style.color = ''; // Reset to default text color
-                    input.style.backgroundColor = ''; // Reset to default background color
+                    input.style.color = '';
+                    input.style.backgroundColor = '';
                 }
             });
         });
