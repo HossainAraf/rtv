@@ -91,6 +91,9 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", function() {
+      let submissionCount = 0; // Variable to track submission count
+      let countdownInterval; // Variable to hold interval ID for countdown
+
       // Move cursor to the next input field
       document.querySelectorAll(".form-field").forEach(function(input, index, inputs) {
         input.addEventListener("input", function() {
@@ -124,14 +127,14 @@
         let submitButton = document.getElementById("submit-button");
 
         // Update the countdown every 1 second
-        let x = setInterval(function() {
+        countdownInterval = setInterval(function() {
           let minutes1 = Math.floor(time / 60);
           let seconds = time % 60;
 
           countdown1.innerHTML = minutes1 + ":" + (seconds < 10 ? "0" : "") + seconds;
 
           if (time <= 0) {
-            clearInterval(x);
+            clearInterval(countdownInterval);
             countdown1.innerHTML = "OTP expired";
             resend.style.display = "block";
             counterWrapper1.style.display = "none";
@@ -160,8 +163,14 @@
 
         // If form is valid, start countdown and reset input values
         if (formValid) {
-          startCountdown();
-          resetInputValues();
+          submissionCount++; // Increment submission count
+          if (submissionCount <= 2) { // Check if it's the second submission
+            startCountdown();
+            resetInputValues();
+          }
+          if (submissionCount === 2) { // Check if it's the second submission
+            clearInterval(countdownInterval); // Stop the countdown after the second submission
+          }
         }
       });
 
@@ -188,6 +197,10 @@
             document.getElementById("submit-button").disabled = false;
             counterWrapper2.style.display = "none";
           }
+        else {
+          counterWrapper2.style.display = "block";
+          resend.disabled = true;
+        }
           time--;
         }, 1000);
       });
