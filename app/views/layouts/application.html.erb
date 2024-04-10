@@ -12,10 +12,22 @@
     <%= javascript_importmap_tags %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
+  <body>
+    <div class="row">
+        <div class="col-12">
+            <%= render 'layouts/navbar' %>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <%= yield %>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <%= render 'layouts/footer' %>
+        </div>
+    </div>
+</body>
 
-  <body> 
-    <%= render 'layouts/navbar' %>
-    <%= yield %>
-    <%= render 'layouts/footer' %>
-  </body>
 </html>

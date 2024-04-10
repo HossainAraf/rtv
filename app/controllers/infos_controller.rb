@@ -9,7 +9,6 @@ class InfosController < ApplicationController
 
   # GET /infos/1 or /infos/1.json
   def show
-    @info = Info.find(params[:id])
     @six_digit_input = SixDigitInput.new  # Ensure you initialize the necessary instance variable
   end
 

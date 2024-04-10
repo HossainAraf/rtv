@@ -23,6 +23,13 @@ body {
   padding: 10% 1%;
 }
 
+.landing-image-container h1 {
+  font-size: medium;
+}
+
+.landing-image-container p {
+  font-size: 12px;
+}
 .image-container-wrapper {
   margin-top: 1%;
   padding-top: 1%;
@@ -67,17 +74,20 @@ body {
 
 .action p {
   margin-right: 2%;
-  font-size: smaller;
+  margin-top: 10%;
+  margin-bottom: 15%;
+  font-size: 1.2rem;
 }
 
 .action-img {
-  margin-right: 3%;
   flex-basis: 60%;
   width: 100%;
-}
-
-.rounded-circle {
-  width: 131%;
+  height: 50rem;
+  background-image: url('7.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  background-position-x: center;
 }
 
 
@@ -89,5 +99,13 @@ body {
   #banner {
     background-repeat: round;
     padding: 1%;
+  }
+
+  .action p {
+    font-size: 0.85rem;
+  }
+
+  .action-img {
+    height: 28rem;
   }
 }

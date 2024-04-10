@@ -94,11 +94,15 @@
 
   <script>
   document.addEventListener("DOMContentLoaded", function() {
-    let countdownStarted = false; // Flag to indicate if the countdown has started
 
+
+    let countdownStarted = false; // Flag to indicate if the countdown has started
+    let resendButton = document.getElementById("resend");
+    resendButton.disabled = true;
+  
     // Move cursor to the next input field
     document.querySelectorAll(".form-field").forEach(function(input, index, inputs) {
-      input.addEventListener("input", function() {
+      input.addEventListener("keyup", function() {
         if (input.value.length >= input.maxLength) {
           let next = inputs[index + 1];
           if (next) {
