@@ -3,6 +3,23 @@ body {
   background-color: #b50000;
 }
 
+.sidebar-right {
+  height: 100%;
+  width: 160px;
+  position: absolute;
+  z-index: 1;
+  top: 5rem;
+  right: 1rem;
+  background-color: transparent;
+  padding-top: 16px;
+  padding-right: 15%;
+}
+
+.sidebar-right img {
+  margin-bottom: 3rem;
+  max-width: 10rem;
+}
+
 .notification {
   width: 2rem;
 }
@@ -13,7 +30,6 @@ body {
   padding: 0.5rem;
   color:blanchedalmond;
   cursor: pointer;
-  /* font-size: ; */
 }
 
 .sidebar {
@@ -161,6 +177,13 @@ body {
   z-index: 99999;
 }
 
+.advertise {
+  margin: 3% 1%;
+}
+
+.advertise img {
+  width: 20rem;
+}
 /* Popup Wrapper */
 #popup-wrapper {
   display: flex;
@@ -230,5 +253,9 @@ body {
 
   .popup-container {
     width: 75%;
+  }
+
+  .sidebar-right {
+    display: none;
   }
 }
