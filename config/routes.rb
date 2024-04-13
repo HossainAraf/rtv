@@ -25,9 +25,14 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
   
   get 'home/index'
+  get 'privacy', to: 'pages#privacy'
+  get 'terms', to: 'pages#terms'
+  get 'icebreaker', to: 'pages#icebreaker'
+
 
   # Define a route for popup action
   get 'popup', to: 'home#popup'
+  
   # Defines the root path route ("/")
   root 'home#popup'
 end
