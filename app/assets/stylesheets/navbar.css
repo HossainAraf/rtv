@@ -1,7 +1,14 @@
 .nav {
   background: linear-gradient(to right, #09070a, #744d99);
-  padding-left: 3%;
   width: 100%;
+}
+
+.navbar-brand {
+  width: 2rem;
+}
+
+.navbar-brand {
+  flex-shrink: 0; /* Prevent logo from shrinking */
 }
 
 .nav h4 {
@@ -17,4 +24,13 @@
 
 .nav li a:hover {
   color: #c6e805;
+}
+
+@media (max-width: 768px) {
+
+  .navbar-brand {
+    width: 1.5rem;
+    margin-left: 50%;
+  }
+  
 }
