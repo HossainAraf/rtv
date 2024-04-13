@@ -21,14 +21,16 @@ body {
   background-image: url('1.gif');
   background-size: cover;
   padding: 10% 1%;
+  min-height: 40rem;
 }
 
 .landing-image-container h1 {
-  font-size: medium;
+  font-size: 24px;
+  padding-top: 10%;
 }
 
 .landing-image-container p {
-  font-size: 12px;
+  font-size:16px;
 }
 .image-container-wrapper {
   margin-top: 1%;
@@ -99,6 +101,7 @@ body {
   #banner {
     background-repeat: round;
     padding: 1%;
+    min-height: 29rem;
   }
 
   .action p {

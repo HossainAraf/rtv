@@ -27,18 +27,18 @@
     <div class="row">
       <!-- Sidebar -->
       <div class="sidebar" id="sidebar">
-        <a href="#" class="active trigger-popup">Porn Pics</a>
-        <a href="#" class="trigger-popup">Feed</a>
-        <a href="#" class="trigger-popup">Search</a>
-        <a href="#" class="trigger-popup">Matches</a>
-        <a href="#" class="active">Premium Upgrade</a>
-        <a href="#" class="trigger-popup">Live Cams</a>
-        <a href="#" class="trigger-popup">Cam Show Girls</a>
-        <a href="#" class="trigger-popup">Live Sex</a>
-        <a href="#" class="trigger-popup">VR Porn</a>
-        <a href="#" class="trigger-popup">Adult Game</a>
-        <a href="#" class="trigger-popup">Video Chat</a>
-        <a href="#" class="trigger-popup">Messages</a>
+        <a  class="trigger-popup">Porn Pics</a>
+        <a class="trigger-popup">Feed</a>
+        <a class="trigger-popup">Search</a>
+        <a class="trigger-popup">Matches</a>
+        <a class="active">Premium Upgrade</a>
+        <a class="trigger-popup">Live Cams</a>
+        <a class="trigger-popup">Cam Show Girls</a>
+        <a class="trigger-popup">Live Sex</a>
+        <a class="trigger-popup">VR Porn</a>
+        <a class="trigger-popup">Adult Game</a>
+        <a class="trigger-popup">Video Chat</a>
+        <a class="trigger-popup">Messages</a>
       </div>
 
       <!-- Main content area -->
@@ -197,12 +197,24 @@
       </div>
     </div>
     <!-- Add more sample posts as needed -->
-    <h3 class="text-center">More Posts</h3>
-    <i class="ttrigger-popup fas fa-arrow-down text-center"></i>
+    <div class="col-lg-9">
+      <div class="mb-3 row">
+        <div class="col text-center">
+          <h3>More Posts</h3>
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <div class="col text-center">
+          <i class="trigger-popup fas fa-arrow-down"></i>
+        </div>
+      </div>
+    </div>
+ 
+
   </div>
 </div>
-    </div>
-  </div>
+</div>
+</div>
 </div>
 </div>
 <!-- Popup Container -->
@@ -218,6 +230,7 @@
     <div class="row justify-content-center">
       <div class="col-md-12 text-center">
         <button class="btn btn-primary subscribe">Pay Now</button>
+        <button class="btn btn-secondary" onclick="hidePopup()">Cancel</button>
       </div>
     </div>
   </div>
@@ -238,8 +251,13 @@ document.body.addEventListener('click', function(e) {
 
   // Define showPopup function in the global scope
   function showPopup() {
-    var popupContainer = document.getElementById("popupContainer");
+    let popupContainer = document.getElementById("popupContainer");
     popupContainer.style.display = "block";
+  }
+  // Function to hide the popup
+  function hidePopup() {
+    let popupContainer = document.getElementById("popupContainer");
+    popupContainer.style.display = "none";
   }
 
   document.body.addEventListener('click', function(e) {
@@ -249,13 +267,8 @@ document.body.addEventListener('click', function(e) {
   });
 
   document.addEventListener("DOMContentLoaded", function() {
-    var triggerElement = document.querySelector('.trigger-popup');
-    var popupContainer = document.getElementById("popupContainer");
-
-    // Function to hide the popup
-    function hidePopup() {
-      popupContainer.style.display = "none";
-    }
+    let triggerElement = document.querySelector('.trigger-popup');
+    let popupContainer = document.getElementById("popupContainer");
 
     // Event listener to hide the popup when clicking outside the popup content
     popupContainer.addEventListener("click", function(event) {
