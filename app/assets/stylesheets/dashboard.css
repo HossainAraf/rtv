@@ -179,10 +179,13 @@ body {
 
 .advertise {
   margin: 3% 1%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .advertise img {
   width: 20rem;
+  margin-right: 1rem;
 }
 /* Popup Wrapper */
 #popup-wrapper {
