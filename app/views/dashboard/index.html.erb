@@ -10,7 +10,7 @@
 </head>
 <body>
 <div class="container-fluid">
-  <div class="row top-actions">
+  <div class="row top-actions text-center">
     <div class="col-3">
       <img src="./assets/notification" alt="Notification" class="notification trigger-popup ">
     </div>
@@ -294,6 +294,31 @@
     <%= image_tag "adv-1.png", class: "img-fluid", alt: "Image 1" %>
   </a>
 </div>
+
+
+<div id="userPopup" class="userPopup container d-flex justify-content-center align-items-center">
+    <div class="card">
+        <div class="upper">
+            <img src="https://i.imgur.com/Qtrsrk5.jpg" class="img-fluid">
+        </div>
+        <div class="user text-center">
+            <div class="profile">
+                <img src="https://i.imgur.com/JgYD2nQ.jpg" class="rounded-circle" width="80">
+            </div>
+        </div>
+        <div class="mt-5 text-center">
+            <h4 class="mb-0">Benjamin Tims</h4>
+            <span class="text-muted d-block mb-2">Los Angeles</span>
+            <button class="trigger-popup btn btn-primary btn-sm follow">Follow</button>
+            <div class="d-flex justify-content-between align-items-center mt-4 px-4">
+                <div class="stats">
+                    <h6 class="mb-0">Followers</h6>
+                    <span>47</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <script>
 function toggleSidebar() {
   document.getElementById('sidebar').classList.toggle('show');
@@ -333,6 +358,31 @@ document.body.addEventListener('click', function(e) {
       }
     });
   });
+
+  // Function to show the popup
+  function showUserPopup() {
+      var userPopup = document.getElementById('userPopup');
+      userPopup.style.bottom = '0';
+  }
+
+  // Function to hide the popup
+  function hideUserPopup() {
+      var userPopup = document.getElementById('userPopup');
+      userPopup.style.bottom = '-100rem';
+  }
+
+  // USER POPUP
+  // Show the user-popup initially
+  showUserPopup();
+
+  // Schedule showing and hiding of the popup
+  setInterval(function() {
+      hideUserPopup(); // Hide the popup
+      setTimeout(function() {
+          showUserPopup(); // Show the popup after hiding
+      }, 5000); // Change 2000 to desired milliseconds for the interval
+  }, 8000); // Change 5000 to desired milliseconds for the total interval
+
 </script>
 
 </body>
