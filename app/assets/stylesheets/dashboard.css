@@ -258,13 +258,23 @@ body {
   height: 3rem;
 }
 
+.follow {
+  border-radius: 15px;
+}
+
 .stats {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 1%;
+  font-size: 14px;;
+  color:#2a0505;
 }
+
+.stats span {
+  color: olivedrab;
+} 
 
 
 @media (max-width: 768px) {
