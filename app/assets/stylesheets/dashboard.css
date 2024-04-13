@@ -256,6 +256,7 @@ body {
   transition: bottom 0.9s;
   width: 15rem;
   height: 3rem;
+  z-index: 999;;
 }
 
 .follow {
@@ -276,6 +277,9 @@ body {
   color: olivedrab;
 } 
 
+.sidebar-right a img {
+ margin-bottom: 10rem;
+}
 
 @media (max-width: 768px) {
   .sidebar {
