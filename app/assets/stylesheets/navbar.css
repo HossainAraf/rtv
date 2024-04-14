@@ -26,6 +26,14 @@
   color: #c6e805;
 }
 
+.navbar-toggler .bar {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background-color: red;
+  margin: 4px 0;
+}
+
 @media (max-width: 768px) {
 
   .navbar-brand {
