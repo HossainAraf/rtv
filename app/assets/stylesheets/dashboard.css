@@ -151,6 +151,14 @@ align-items: baseline;
   height: 1rem;
 }
 
+.media-body {
+  color: #000;
+}
+
+.post-added {
+  border: 1px solid #fff;
+}
+
 .gallery {
   display: flex;
   flex-wrap: wrap;
