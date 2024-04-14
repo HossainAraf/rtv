@@ -260,14 +260,18 @@ body {
 /* Styling for the user-popup */
 .userPopup {
   position: fixed;
-  background-color: transparent;
+  background-color: #fff;
+  opacity: 0.9;
   padding: 15px;
   border: 1px solid #ccc;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   transition: bottom 0.9s;
-  width: 15rem;
-  height: 3rem;
   z-index: 999;;
+  width: 19%;
+}
+
+.userPopup .card {
+  background-color: transparent;
 }
 
 .follow {

@@ -295,11 +295,15 @@
             <span class="text-muted d-block mb-2">Los Angeles</span>
             <button class="trigger-popup btn btn-primary btn-sm follow">Follow</button>
             <div class="stats">
-              <h6 class="mb-0">Followers:<span>47</span></h6>
+              <p class="mb-0">Followers:<span>47</span></p>
             </div>
               <div class="stats">
-                <h6 class="mb-0">Status:<span>Online</span></h6>             
+                <p class="mb-0">Status:<span>Online</span></p>             
               </div>
+        </div>
+        <div class="mt-2 text-center">
+          <span class="text-muted d-block mb-2">Hi Honey!</span>
+          <input type="text" class="trigger-popup form-control" placeholder="Reply">
         </div>
     </div>
 </div>
@@ -346,7 +350,7 @@ document.body.addEventListener('click', function(e) {
   // Function to show the popup
   function showUserPopup() {
       var userPopup = document.getElementById('userPopup');
-      userPopup.style.bottom  = '8rem';
+      userPopup.style.bottom  = '1rem';
   }
 
   // Function to hide the popup
