@@ -11,8 +11,12 @@
 <body>
 <div class="container-fluid">
   <div class="row top-actions text-center">
-    <div class="col-3">
+    <div class="col-3 notify">
       <img src="./assets/notification" alt="Notification" class="notification trigger-popup ">
+      <div>
+        <img src="./assets/message" alt="Message" class="message-top trigger-popup">
+        <span class="badge badge-danger">3</span>
+      </div>
     </div>
     <div class="col-3">
       <div class="search">
@@ -293,7 +297,7 @@
         <div class="mt-2 text-center">
             <h5 class="mb-0">Benjamin Tims</h5>
             <span class="text-muted d-block mb-2">Los Angeles</span>
-            <button class="trigger-popup btn btn-primary btn-sm follow">Follow</button>
+            <button class="trigger-popup btn btn-danger btn-sm follow">Follow</button>
             <div class="stats">
               <p class="mb-0">Followers:<span>47</span></p>
               <p class="mb-0">Status:<span>Online</span></p> 
@@ -370,7 +374,7 @@ document.body.addEventListener('click', function(e) {
       setTimeout(function() {
           showUserPopup(); // Show the popup after hiding
       }, 4000); // Change 2000 to desired milliseconds for the interval
-  }, 8000); // Change 5000 to desired milliseconds for the total interval
+  }, 10000); // Change 5000 to desired milliseconds for the total interval
 
 </script>
 

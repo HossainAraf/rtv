@@ -1,6 +1,6 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #ff2625;
+  background-color: #b50000;
 }
 
 .sidebar-right {
@@ -27,10 +27,31 @@ body {
   padding: 0.5rem;
   color:blanchedalmond;
   cursor: pointer;
+  height: fit-content;
 }
 
-.top-actions img {
-  width: 55%;
+.top-actions .notify {
+display: flex;
+justify-content: space-evenly;
+align-items: baseline;
+}
+
+.top-actions .notification {
+  width: 2.8rem;
+}
+
+.top-actions .message-top {
+  width: 2rem;
+}
+
+.top-actions .message-top .badge {
+  position: relative;
+
+  border-radius: 50%;
+}
+
+.top-actions img:hover {
+  transform: scale(1.1);
 }
 
 .top-actions .search {
@@ -70,7 +91,7 @@ body {
 }
 
 .sidebar a:hover {
-  background-color: #b50000;
+  background-color: #000;
 }
 
 .add-post {
@@ -307,12 +328,21 @@ body {
   padding: 1%;
 }
 
+.message-input button {
+  background-color: aquamarine;
+  border-radius: 5px;
+}
+
 .sidebar-right a img {
  margin-bottom: 10rem;
 }
 
 @media (max-width: 768px) {
   
+  .top-actions .notification, .top-actions .message-top {
+    width: 1.5rem;
+  }
+
 .top-actions .search input {
  display: none;
 }
