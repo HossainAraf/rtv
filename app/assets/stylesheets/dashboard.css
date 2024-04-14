@@ -1,6 +1,6 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #b50000;
+  background-color: #ff2625;
 }
 
 .sidebar-right {
@@ -20,16 +20,27 @@ body {
   max-width: 10rem;
 }
 
-.notification {
-  width: 2rem;
-}
-
 .top-actions {
   display: flex;
   justify-content: center;
+  align-items: baseline;
   padding: 0.5rem;
   color:blanchedalmond;
   cursor: pointer;
+}
+
+.top-actions img {
+  width: 55%;
+}
+
+.top-actions .search {
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+}
+
+.top-actions .search .form-control {
+  margin-right: 2%;
 }
 
 .sidebar {
@@ -282,6 +293,11 @@ body {
 }
 
 @media (max-width: 768px) {
+  
+.top-actions .search input {
+ display: none;
+}
+
   .sidebar {
     left: -250px;
     width:39%;
