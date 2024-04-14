@@ -1,7 +1,12 @@
 body {
   background-color: #000;
-  color:azure
+  color:azure;
+  width: 100%;
 }
+/* 
+.row > * {
+ width: 9rem;
+} */
 
 .flex-r {
   display: flex;
@@ -15,6 +20,13 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+}
+
+.i-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 9rem;
 }
 
 #banner {
