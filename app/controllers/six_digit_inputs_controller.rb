@@ -12,7 +12,7 @@ def create
   
   if @six_digit_input.save
     flash[:notice] = 'Six digit input was successfully created.'
-    redirect_to '/pics'
+
   else
     render :new
   end
