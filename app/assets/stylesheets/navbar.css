@@ -1,10 +1,13 @@
 .nav {
   background: linear-gradient(to right, #c0c0c0, #000);
   width: 100%;
+  position: relative;
 }
 
 .navbar-brand {
-  width: 2rem;
+  position: absolute;
+  left: 5%;
+  width: 5rem;
 }
 
 .navbar-brand {
@@ -37,8 +40,8 @@
 @media (max-width: 768px) {
 
   .navbar-brand {
-    width: 1.5rem;
-    margin-left: 50%;
+    width: 4.5rem;
+    margin-left: 39%;
   }
   
 }
