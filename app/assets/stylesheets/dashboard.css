@@ -290,8 +290,7 @@ align-items: baseline;
 /* Styling for the user-popup */
 .userPopup {
   position: fixed;
-  background-color: #fff;
-  opacity: 0.9;
+  background-color: #d3c5c5;
   padding: 15px;
   border: 1px solid #ccc;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
