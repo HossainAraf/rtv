@@ -4,11 +4,15 @@ body {
   color: #fff;
 }
 
+.trigger-popup {
+  z-index: 9999999;
+}
+
 .sidebar-right {
   position: fixed;
   z-index: 1;
   top: 7rem;
-  right: -100px;
+  right: -200px;
   background-color: transparent;
   padding-top: 16px;
   padding-right: 5%;

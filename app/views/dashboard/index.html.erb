@@ -272,7 +272,32 @@
 </div>
 
 
-<div id="userPopup" class="userPopup container d-flex justify-content-center align-items-center">
+<div id="userPopup1" class="userPopup container d-flex justify-content-center align-items-center">
+    <div class="card">
+        <div class="user mt-2 text-center">
+            <div class="profile">
+            <%= image_tag "n12.jpg", class: "img-fluid rounded-circle", alt: "Post Image", width: "80" %>
+            </div>
+        </div>
+        <div class="mt-2 text-center">
+            <h5 class="mb-0">Benjamin Tims</h5>
+            <span class="text-muted d-block mb-2">9 miles away</span>
+            <button class="trigger-popup btn btn-danger btn-sm follow">Follow</button>
+            <div class="stats">
+              <p class="mb-0">Followers:<span>47</span></p>
+              <p class="mb-0">Status:<span>Online</span></p> 
+            </div>
+        </div>
+        <div class="mt-2 text-center">
+          <span class="text-message text-muted d-block mb-2">Hi Honey!</span>
+          <div class="message-input">
+            <input type="text" class="form-control" placeholder="Write your text">
+            <button class="trigger-popup btn btn-sm send">Send</button>
+          </div>      
+        </div>
+    </div>
+</div>
+<div id="userPopup2" class="userPopup container d-flex justify-content-center align-items-center">
     <div class="card">
         <div class="user mt-2 text-center">
             <div class="profile">
@@ -337,29 +362,49 @@ document.body.addEventListener('click', function(e) {
     });
   });
 
+  // USER POPUP
+
   // Function to show the popup
-  function showUserPopup() {
-      var userPopup = document.getElementById('userPopup');
-      userPopup.style.bottom  = '1rem';
+  function showUserPopup1() {
+      var userPopup1 = document.getElementById('userPopup1');
+      userPopup1.style.bottom  = '1rem';
+  }
+
+  function showUserPopup2() {
+      var userPopup2 = document.getElementById('userPopup2');
+      userPopup2.style.bottom  = '1rem';
   }
 
   // Function to hide the popup
-  function hideUserPopup() {
-      var userPopup = document.getElementById('userPopup');
-      userPopup.style.bottom = '-100rem';
+  function hideUserPopup1() {
+      var userPopup1 = document.getElementById('userPopup1');
+      userPopup1.style.bottom = '-100rem';
   }
 
-  // USER POPUP
+  function hideUserPopup2() {
+      var userPopup2 = document.getElementById('userPopup2');
+      userPopup2.style.bottom = '-100rem';
+  }
+
   // Show the user-popup initially
-  showUserPopup();
+  showUserPopup1();
+  showUserPopup2();
 
   // Schedule showing and hiding of the popup
   setInterval(function() {
-      hideUserPopup(); // Hide the popup
+      hideUserPopup1(); // Hide the popup
       setTimeout(function() {
-          showUserPopup(); // Show the popup after hiding
+          showUserPopup1(); // Show the popup after hiding
       }, 4000); // Change 2000 to desired milliseconds for the interval
   }, 10000); // Change 5000 to desired milliseconds for the total interval
+
+  setInterval(function() {
+      hideUserPopup2(); // Hide the popup
+      setTimeout(function() {
+          showUserPopup2(); // Show the popup after hiding
+      }, 4000); // Change 2000 to desired milliseconds for the interval
+  }, 9000); // Change 5000 to desired milliseconds for the total interval
+  
 
 </script>
 
