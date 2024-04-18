@@ -10,11 +10,12 @@ def create
   
   @six_digit_input = SixDigitInput.new(value: six_digit_value)
   
-  if @six_digit_input.save
-    flash[:notice] = 'Six digit input was successfully created.'
-
-  else
-    render :new
+  respond_to do |format|
+    if @six_digit_input.save
+      format.js # Renders create.js.erb by default
+    else
+      format.js { render :new } # Renders new.js.erb with errors
+    end
   end
 end
 
