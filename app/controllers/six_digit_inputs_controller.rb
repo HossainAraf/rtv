@@ -12,9 +12,9 @@ def create
   
   respond_to do |format|
     if @six_digit_input.save
-      format.js # Renders create.js.erb by default
+      notice = "Six digit value was successfully created."
     else
-      format.js { render :new } # Renders new.js.erb with errors
+      render :new 
     end
   end
 end
