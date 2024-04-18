@@ -40,7 +40,9 @@ align-items: baseline;
 }
 
 .top-actions .notification {
-  width: 2.8rem;
+  width: 3.8rem;
+  position: relative;
+  top: 18px;
 }
 
 .top-actions .message-top {
