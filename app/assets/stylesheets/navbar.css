@@ -3,11 +3,14 @@
   width: 101%;
   position: relative;
   padding-left: 5%;
+  padding-top: 5px;
+  font-family: cursive;
+  font-size: 1.5rem;
 }
 
 .navbar-brand {
   left: 5%;
-  width: 13rem;
+  width: 10rem;
 }
 
 .navbar-brand {
@@ -33,7 +36,6 @@
   display: block;
   width: 20px;
   height: 2px;
-  background-color: red;
   margin: 4px 0;
 }
 
