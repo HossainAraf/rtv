@@ -5,15 +5,13 @@ body {
 }
 
 .sidebar-right {
-  height: 100%;
-  /* width: 160px; */
-  position: absolute;
+  position: fixed;
   z-index: 1;
-  top: 9rem;
-  right: -60rem;
+  top: 7rem;
+  right: -100px;
   background-color: transparent;
   padding-top: 16px;
-  padding-right: 15%;
+  padding-right: 5%;
 }
 
 .sidebar-right img {
@@ -168,10 +166,9 @@ align-items: baseline;
 
 .gallery-item {
   margin: 10px;
-  width: 15rem;
+  width: 120rem;
   height: 15rem;
   text-align: center;
-  position: relative;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s;
@@ -196,10 +193,9 @@ align-items: baseline;
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
   padding: 8px;
   color: white;
-  font-size: 14px;
+  font-size: 18px;
   text-align: center;
   opacity: 0;
   transition: opacity 0.3s;
