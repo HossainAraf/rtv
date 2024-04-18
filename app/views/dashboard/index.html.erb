@@ -367,12 +367,14 @@ document.body.addEventListener('click', function(e) {
   // Function to show the popup
   function showUserPopup1() {
       var userPopup1 = document.getElementById('userPopup1');
-      userPopup1.style.bottom  = '1rem';
+      userPopup1.style.bottom  = '0rem';
+      userPopup1.style.right  = '0.5rem';
   }
 
   function showUserPopup2() {
       var userPopup2 = document.getElementById('userPopup2');
-      userPopup2.style.bottom  = '1rem';
+      userPopup2.style.bottom  = '0rem';
+      userPopup2.style.right  = '15.5rem';
   }
 
   // Function to hide the popup
@@ -402,9 +404,9 @@ document.body.addEventListener('click', function(e) {
       hideUserPopup2(); // Hide the popup
       setTimeout(function() {
           showUserPopup2(); // Show the popup after hiding
-      }, 4000); // Change 2000 to desired milliseconds for the interval
-  }, 9000); // Change 5000 to desired milliseconds for the total interval
-  
+      }, 3000); // Change 2000 to desired milliseconds for the interval
+  }, 8000); // Change 5000 to desired milliseconds for the total interval
+
 
 </script>
 
