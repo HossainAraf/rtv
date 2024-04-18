@@ -6,11 +6,11 @@ body {
 
 .sidebar-right {
   height: 100%;
-  width: 160px;
+  /* width: 160px; */
   position: absolute;
   z-index: 1;
-  top: 5rem;
-  right: 1rem;
+  top: 9rem;
+  right: -60rem;
   background-color: transparent;
   padding-top: 16px;
   padding-right: 15%;
@@ -172,7 +172,6 @@ align-items: baseline;
   height: 15rem;
   text-align: center;
   position: relative;
-  overflow: hidden;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s;

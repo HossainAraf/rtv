@@ -13,10 +13,6 @@
   <div class="row top-actions text-center">
     <div class="col-3 notify">
       <img src="./assets/notification" alt="Notification" class="notification trigger-popup ">
-      <div>
-        <img src="./assets/message" alt="Message" class="message-top trigger-popup">
-        <span class="badge badge-danger">3</span>
-      </div>
     </div>
     <div class="col-3">
       <div class="search">
@@ -246,24 +242,27 @@
   </div>
 </div>
 </div>
-
 <div class="sidebar-right">
-<div class="container-fluid ">
-<div class="row">
-  <!-- Main content area -->
-  <div class="container-fluid">   
-    <div class="gallery">
+  <div class="container-fluid">
+    <!-- Main content area -->
+    <div class="gallery" style="display: flex; flex-direction: column;">
       <div class="gallery-item">
-        <img class="trigger-popup" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeZZHxc3_R6ep7gr4HMVtbhij1tRuTMff5Bg&s" alt="Image 1">
-        <span class="caption">Jeny Spark</span>
+        <%= image_tag "n13.jpg", class: "img-fluid", alt: "Image" %>
         <div class="subscript trigger-popup">Connect me</div>
       </div>
       <div class="gallery-item">
-        <img class="trigger-popup" src="https://cdn.pixabay.com/photo/2018/05/22/14/00/girl-3421489_640.jpg" alt="Image 2">
-        <span class="caption">Jeny Spark</span>
-        <div class="subscript  trigger-popup">Connect me</div>
+      <%= image_tag "n14.jpg", class: "img-fluid", alt: "Image" %>
+        <div class="subscript trigger-popup">Connect me</div>
       </div>
-    <!-- Add more gallery items as needed -->
+      <div class="gallery-item">
+      <%= image_tag "n15.jpg", class: "img-fluid", alt: "Image" %>
+        <div class="subscript trigger-popup">Connect me</div>
+      </div>
+      <div class="gallery-item">
+      <%= image_tag "n16.jpg", class: "img-fluid", alt: "Image" %>
+        <div class="subscript trigger-popup">Connect me</div>
+      </div>
+      <!-- Add more gallery items as needed -->
     </div>
   </div>
 </div>
