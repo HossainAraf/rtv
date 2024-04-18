@@ -172,12 +172,13 @@
 
     // Listen for the "RESEND" button click
     document.getElementById("resend").addEventListener("click", function() {
-      resend.disabled = true; // Disable the "RESEND" button
+      resendButton.disabled = true; // Disable the "RESEND" button
       startCountdown(10, "counter-2", document.getElementById("submit-button"), this, document.getElementById("counter-wrapper-2"), document.getElementById("counter-wrapper-1")); // Start the countdown for resend (60 seconds = 1 minute)
       countdownStarted = true; // Set the flag to indicate that the countdown has started
     });
 
   });
+  
 </script>
 
 
