@@ -1,7 +1,12 @@
 body {
-  background-color: rgb(92, 67, 116);
-  color:azure
+  background-color: #000;
+  color:azure;
+  width: 100%;
 }
+/* 
+.row > * {
+ width: 9rem;
+} */
 
 .flex-r {
   display: flex;
@@ -17,12 +22,28 @@ body {
   align-items: flex-start;
 }
 
+.i-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 9rem;
+}
+
 #banner {
   background-image: url('1.gif');
   background-size: cover;
   padding: 10% 1%;
+  min-height: 40rem;
 }
 
+.landing-image-container h1 {
+  font-size: 24px;
+  padding-top: 10%;
+}
+
+.landing-image-container p {
+  font-size:16px;
+}
 .image-container-wrapper {
   margin-top: 1%;
   padding-top: 1%;
@@ -67,17 +88,20 @@ body {
 
 .action p {
   margin-right: 2%;
-  font-size: smaller;
+  margin-top: 10%;
+  margin-bottom: 15%;
+  font-size: 1.2rem;
 }
 
 .action-img {
-  margin-right: 3%;
   flex-basis: 60%;
   width: 100%;
-}
-
-.rounded-circle {
-  width: 131%;
+  height: 50rem;
+  background-image: url('7.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  background-position-x: center;
 }
 
 
@@ -89,5 +113,14 @@ body {
   #banner {
     background-repeat: round;
     padding: 1%;
+    min-height: 29rem;
+  }
+
+  .action p {
+    font-size: 0.85rem;
+  }
+
+  .action-img {
+    height: 28rem;
   }
 }

@@ -1,6 +1,20 @@
 .nav {
-  background: linear-gradient(to right, #09070a, #744d99);
-  padding-left: 3%;
+  background: linear-gradient(to right, #000, #C0C0C0);
+  width: 101%;
+  position: relative;
+  padding-left: 5%;
+  padding-top: 5px;
+  font-family: cursive;
+  font-size: 1.5rem;
+}
+
+.navbar-brand {
+  left: 5%;
+  width: 10rem;
+}
+
+.navbar-brand {
+  flex-shrink: 0; /* Prevent logo from shrinking */
 }
 
 .nav h4 {
@@ -16,4 +30,20 @@
 
 .nav li a:hover {
   color: #c6e805;
+}
+
+.navbar-toggler .bar {
+  display: block;
+  width: 20px;
+  height: 2px;
+  margin: 4px 0;
+}
+
+@media (max-width: 768px) {
+
+  .navbar-brand {
+    width: 10.5rem;
+    margin-left: 30%;
+  }
+  
 }
