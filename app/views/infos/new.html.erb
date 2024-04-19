@@ -9,11 +9,25 @@
   <style>
 
     .infos {
-      position: fixed;
-      top: -1rem;
+      position: relative;
+      top: -14rem;
       z-index: 999999999;
       padding: 10%;
       background-color: #000;
+      height: 70rem;
+      overflow: hidden;
+    }
+
+    @media (min-width: 480px) {
+      .infos {
+        top: -12rem;
+        justify-content: center;
+      }
+
+      .card {
+        display: flex;
+        justify-content: center;
+      }
     }
   </style>
 </head>

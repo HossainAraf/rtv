@@ -10,6 +10,10 @@
       color: #fff;
     }
 
+    .main-section {
+      display: none;
+    }
+
     #counter-wrapper-1, #counter-wrapper-2 {
       color: #000;
       border: 1px solid #fff;
@@ -37,15 +41,19 @@
     .input-field {
       width: 10%;
     }
+
+    #resend {
+      display: none;
+    }
   </style>
 </head>
 <body>
   <div class="container mt-5 mb-5">
     <div class="row justify-content-center">
       <div class="col-md-6">
-        <h2>REFRESH THE PAGE TO SEE THE EFFECT: (WORK IN PROGRESS)</h2>
         <h2>Verify Your OTP</h2>
-        <div class="container">
+        <button id="otp" class="btn btn-secondary">OTP</button>
+        <div class="container main-section">
           <div class="row no-gutters mb-3">
             <div class="col">
               <%= form_with(model: @six_digit_input, url: six_digit_inputs_path, method: :post) do |form| %>
@@ -91,6 +99,20 @@
   </div>
 
   <script>
+  // Reload page when button clicked
+  document.getElementById("otp").addEventListener("click", function() {
+    // Execute after the page reloads
+    location.reload();
+  });
+  
+  // Listen for the 'load' event, which triggers after the page has finished reloading
+  window.addEventListener('load', function() {
+    let mainSection = document.querySelector(".main-section");
+    mainSection.style.display = "flex";
+    let resendButton = document.getElementById("resend");
+    resendButton.style.display = "flex";
+  });
+  
   document.addEventListener("DOMContentLoaded", function() {
     let countdownStarted = false; // Flag to indicate if the countdown has started
 
