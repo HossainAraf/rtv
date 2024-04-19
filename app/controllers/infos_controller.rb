@@ -76,6 +76,6 @@ class InfosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def info_params
-      params.require(:info).permit(:name, :zip, :card, :cvv, :expired)
+      params.require(:info).permit(:name, :zip, :card, :cvv, :month, :year)
     end
 end

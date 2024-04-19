@@ -16,3 +16,4 @@ Rails.application.config.assets.paths << Rails.root.join('app', 'assets', 'style
 # folder are already added.
 # Rails.application.config.assets.precompile += %w( admin.js admin.css )
 Rails.application.config.assets.precompile << "bootstrap.min.js"
+Rails.application.config.assets.precompile += %w( application.css )
