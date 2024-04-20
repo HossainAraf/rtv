@@ -62,7 +62,7 @@
   </section>
 
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
+    function applyStylesOnLoad() {
         let selectElements = document.querySelectorAll('select');
 
         selectElements.forEach(function(select) {
@@ -78,6 +78,7 @@
                 }
             });
         });
+
         let inputFields = document.querySelectorAll('.form-control');
 
         inputFields.forEach(function(input) {
@@ -91,7 +92,9 @@
                 }
             });
         });
-    });
+    }
+
+    document.addEventListener("DOMContentLoaded", applyStylesOnLoad);
 </script>
 
 </body>

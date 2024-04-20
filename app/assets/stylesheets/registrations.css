@@ -3,10 +3,14 @@ body {
 }
 
 h2 {
-  color: #1c0d0d;
+  color: #fff;
   font-weight: 200;
   font-family: cursive;
   padding-left: 2%;
+}
+
+ul li {
+  color: #fff;
 }
 
 .banner {
