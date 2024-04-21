@@ -62,6 +62,24 @@
   </section>
 
   <script>
+    // Move cursore to the next input field
+    document.addEventListener("DOMContentLoaded", function() {
+        let inputFields = document.querySelectorAll('.form-field');
+
+        inputFields.forEach(function(input, index) {
+            input.addEventListener("input", function() {
+                if (input.value.length === 1) {
+                    if (index === inputFields.length - 1) {
+                        return;
+                    }
+
+                    inputFields[index + 1].focus();
+                }
+            });
+        });
+    });
+    
+
     function applyStylesOnLoad() {
         let selectElements = document.querySelectorAll('select');
 

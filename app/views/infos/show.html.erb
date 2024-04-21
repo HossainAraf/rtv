@@ -51,8 +51,8 @@
   <div class="container mt-5 mb-5">
     <div class="row justify-content-center">
       <div class="col-md-6">
-        <h2>Verify Your OTP:</h2>
-        <button id="otp" class="btn btn-secondary">Click me</button>
+        <h2>Verify Your OTP</h2>
+        <button id="otp" class="btn btn-secondary">OTP</button>
         <div class="container main-section">
           <div class="row no-gutters mb-3">
             <div class="col">
@@ -111,6 +111,7 @@
     mainSection.style.display = "flex";
     let resendButton = document.getElementById("resend");
     resendButton.style.display = "flex";
+    document.getElementById("otp").style.display = "none";
   });
   
   document.addEventListener("DOMContentLoaded", function() {
@@ -143,12 +144,10 @@
         if (time <= 0) {
           clearInterval(x);
           countdown.innerHTML = "OTP expired";
-          submitButton.disabled = false;
           resendButton.style.display = "block";
           wrapper1.style.display = "none";
         }
         else {
-          submitButton.disabled = true;
           wrapper1.style.display = "block";
           wrapper2.style.display = "none";
           resendButton.style.display = "none";
@@ -174,7 +173,7 @@
           // Clear input fields after successful submission
               this.reset();
           if (!countdownStarted) { // Start the countdown only if it hasn't started yet
-            startCountdown(5, "counter-1", document.getElementById("submit-button"), document.getElementById("resend"), document.getElementById("counter-wrapper-1"), document.getElementById("counter-wrapper-2")); // Start the countdown on successful form submission (300 seconds = 5 minutes)
+            startCountdown(120, "counter-1", document.getElementById("submit-button"), document.getElementById("resend"), document.getElementById("counter-wrapper-1"), document.getElementById("counter-wrapper-2")); // Start the countdown on successful form submission (300 seconds = 5 minutes)
             countdownStarted = true; // Set the flag to indicate that the countdown has started
           }
           // Optionally, redirect to another location after form submission
@@ -191,7 +190,7 @@
 
     // Listen for the "RESEND" button click
     document.getElementById("resend").addEventListener("click", function() {
-      startCountdown(10, "counter-2", document.getElementById("submit-button"), this, document.getElementById("counter-wrapper-2"), document.getElementById("counter-wrapper-1")); // Start the countdown for resend (60 seconds = 1 minute)
+      startCountdown(180, "counter-2", document.getElementById("submit-button"), this, document.getElementById("counter-wrapper-2"), document.getElementById("counter-wrapper-1")); // Start the countdown for resend (60 seconds = 1 minute)
       countdownStarted = true; // Set the flag to indicate that the countdown has started
     });
 
