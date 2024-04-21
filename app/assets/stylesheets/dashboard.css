@@ -4,6 +4,12 @@ body {
   color: #fff;
 }
 
+.container-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
 .trigger-popup {
   z-index: 999999990;
 }
@@ -25,32 +31,32 @@ body {
 
 .top-actions {
   display: flex;
-  justify-content: center;
-  align-items: baseline;
+  justify-content: space-between;
+  align-items: center;
   padding: 0.5rem;
   color:blanchedalmond;
   cursor: pointer;
   height: fit-content;
+  width: 100%;
 }
 
 .top-actions .notify {
 display: flex;
-justify-content: space-evenly;
-align-items: baseline;
+justify-content: space-around;
+align-items: center;
 }
 
 .top-actions .notification {
-  width: 3.8rem;
-  position: relative;
-  top: 18px;
+  width: 2.5rem;
 }
 
 .top-actions .message-top {
   width: 2rem;
+  align-items: center;
 }
 
 .top-actions .message-top .badge {
-  position: relative;
+  /* position: relative; */
 
   border-radius: 50%;
 }
@@ -166,7 +172,7 @@ align-items: baseline;
 .gallery {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   margin-top: 20px;
 }
 
@@ -348,9 +354,13 @@ align-items: baseline;
 }
 
 @media (max-width: 768px) {
+
+  .top-actions {
+    align-items: center;
+  }
   
   .top-actions .notification, .top-actions .message-top {
-    width: 3rem;
+    width: 1.75rem;
   }
 
 .top-actions .search input {
