@@ -83,7 +83,7 @@ align-items: center;
   width: 17%;
   position: absolute;
   transition: left 0.3s;
-  z-index: 9999999;;
+  z-index: 99;
 }
 
 .sidebar.show {
@@ -303,7 +303,7 @@ align-items: center;
   border: 1px solid #ccc;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   transition: bottom 0.9s;
-  z-index: 99;
+  z-index: 993;
   width: 18%;
   height: 20rem;
 }
@@ -348,6 +348,10 @@ align-items: center;
 .message-input button {
   background-color: aquamarine;
   border-radius: 5px;
+}
+
+.sidebar-right {
+  display: none;
 }
 
 .sidebar-right a img {

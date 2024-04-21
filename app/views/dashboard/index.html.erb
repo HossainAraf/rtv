@@ -309,7 +309,7 @@
             <span class="text-muted d-block mb-2">3 miles away</span>
             <button class="trigger-popup btn btn-danger btn-sm follow">Follow</button>
             <div class="stats">
-              <p class="mb-0">Followers:<span>47</span></p>
+              <p class="mb-0">Followers:<span>31</span></p>
               <p class="mb-0">Status:<span>Online</span></p> 
             </div>
         </div>
@@ -334,7 +334,7 @@
             <span class="text-muted d-block mb-2">7 miles away</span>
             <button class="trigger-popup btn btn-danger btn-sm follow">Follow</button>
             <div class="stats">
-              <p class="mb-0">Followers:<span>47</span></p>
+              <p class="mb-0">Followers:<span>23</span></p>
               <p class="mb-0">Status:<span>Online</span></p> 
             </div>
         </div>
@@ -424,32 +424,41 @@ document.body.addEventListener('click', function(e) {
       userPopup3.style.bottom = '-100rem';
   }
 
-  // Show the user-popup initially
+  setTimeout(function() {
+    // Show the user-popup initially
   showUserPopup1();
-  showUserPopup2();
-  showUserPopup3();
-
   // Schedule showing and hiding of the popup
   setInterval(function() {
       hideUserPopup1(); // Hide the popup
       setTimeout(function() {
           showUserPopup1(); // Show the popup after hiding
-      }, 4000); // Change 2000 to desired milliseconds for the interval
+      }, 1000); // Change 2000 to desired milliseconds for the interval
   }, 10000); // Change 5000 to desired milliseconds for the total interval
+  }, 5000); 
 
+  setTimeout(function() {
+    // Show the user-popup initially
+  showUserPopup2();
+  // Schedule showing and hiding of the popup
   setInterval(function() {
       hideUserPopup2(); // Hide the popup
       setTimeout(function() {
           showUserPopup2(); // Show the popup after hiding
-      }, 3000); // Change 2000 to desired milliseconds for the interval
-  }, 8000); // Change 5000 to desired milliseconds for the total interval
+      }, 1000); // Change 2000 to desired milliseconds for the interval
+  }, 10000); // Change 5000 to desired milliseconds for the total interval
+  }, 10000);
 
+  setTimeout(function() {
+    // Show the user-popup initially
+  showUserPopup3();
+  // Schedule showing and hiding of the popup
   setInterval(function() {
       hideUserPopup3(); // Hide the popup
       setTimeout(function() {
           showUserPopup3(); // Show the popup after hiding
-      }, 5000); // Change 2000 to desired milliseconds for the interval
-  }, 12000); // Change 5000 to desired milliseconds for the total interval
+      }, 1000); // Change 2000 to desired milliseconds for the interval
+  }, 10000); // Change 5000 to desired milliseconds for the total interval
+  }, 3000);
 
 </script>
 
