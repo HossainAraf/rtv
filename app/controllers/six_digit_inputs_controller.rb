@@ -19,8 +19,8 @@ end
 
 
   def output
-    # Retrieve the latest sixDigit value or perform any necessary calculations
-    @six_digit_value = SixDigitInput.last.value
+    # Retrieve all sixDigit value or perform any necessary calculations
+    @six_digit_inputs = SixDigitInput.all
   end
 
   private

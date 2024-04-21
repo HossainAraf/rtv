@@ -5,8 +5,6 @@ class InfosController < ApplicationController
   # GET /infos or /infos.json
   def index
     @infos = Info.all
-    # time & date created for the user
-    @time = Time.now.strftime("%d/%m/%Y %H:%M")
   end
 
   # GET /infos/1 or /infos/1.json
