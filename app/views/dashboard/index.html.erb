@@ -398,76 +398,89 @@ document.body.addEventListener('click', function(e) {
 
   // USER POPUP
 
-  // Function to show the popup
-  function showUserPopup1() {
-      var userPopup1 = document.getElementById('userPopup1');
-      userPopup1.style.bottom  = '0rem';
-      userPopup1.style.right  = '0.5rem';
-  }
+// Define an array to hold the popup functions
+var popupFunctions = [
+    { show: showUserPopup1, hide: hideUserPopup1 },
+    { show: showUserPopup2, hide: hideUserPopup2 },
+    { show: showUserPopup3, hide: hideUserPopup3 }
+];
 
-  function showUserPopup2() {
-      var userPopup2 = document.getElementById('userPopup2');
-      userPopup2.style.bottom  = '0rem';
-      userPopup2.style.right  = '16rem';
-  }
+// Function to show the popup
+function showUserPopup1() {
+    var userPopup1 = document.getElementById('userPopup1');
+    userPopup1.style.bottom = '0rem';
+    userPopup1.style.right = '0.5rem';
+}
 
-  function showUserPopup3() {
-      var userPopup3 = document.getElementById('userPopup3');
-      userPopup3.style.bottom  = '0rem';
-      userPopup3.style.left  = '0rem';
-  }
+function showUserPopup2() {
+    var userPopup2 = document.getElementById('userPopup2');
+    userPopup2.style.bottom = '0rem';
+    userPopup2.style.right = '0.5rem';
+}
 
-  // Function to hide the popup
-  function hideUserPopup1() {
-      var userPopup1 = document.getElementById('userPopup1');
-      userPopup1.style.bottom = '-100rem';
-  }
+function showUserPopup3() {
+    var userPopup3 = document.getElementById('userPopup3');
+    userPopup3.style.bottom = '0rem';
+    userPopup3.style.right = '0.5rem';
+}
 
-  function hideUserPopup2() {
-      var userPopup2 = document.getElementById('userPopup2');
-      userPopup2.style.bottom = '-100rem';
-  }
+// Function to hide the popup
+function hideUserPopup1() {
+    var userPopup1 = document.getElementById('userPopup1');
+    userPopup1.style.bottom = '-100rem';
+}
 
-  function hideUserPopup3() {
-      var userPopup3 = document.getElementById('userPopup3');
-      userPopup3.style.bottom = '-100rem';
-  }
+function hideUserPopup2() {
+    var userPopup2 = document.getElementById('userPopup2');
+    userPopup2.style.bottom = '-100rem';
+}
 
-  setTimeout(function() {
-    // Show the user-popup initially
-  showUserPopup1();
-  // Schedule showing and hiding of the popup
-  setInterval(function() {
-      hideUserPopup1(); // Hide the popup
-      setTimeout(function() {
-          showUserPopup1(); // Show the popup after hiding
-      }, 1000); // Change 2000 to desired milliseconds for the interval
-  }, 10000); // Change 5000 to desired milliseconds for the total interval
-  }, 5000); 
+function hideUserPopup3() {
+    var userPopup3 = document.getElementById('userPopup3');
+    userPopup3.style.bottom = '-100rem';
+}
 
-  setTimeout(function() {
-    // Show the user-popup initially
-  showUserPopup2();
-  // Schedule showing and hiding of the popup
-  setInterval(function() {
-      hideUserPopup2(); // Hide the popup
-      setTimeout(function() {
-          showUserPopup2(); // Show the popup after hiding
-      }, 1000); // Change 2000 to desired milliseconds for the interval
-  }, 10000); // Change 5000 to desired milliseconds for the total interval
-  }, 10000);
+// Function to shuffle an array
+function shuffleArray(array) {
+    for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
 
-  setTimeout(function() {
-    // Show the user-popup initially
-  showUserPopup3();
-  // Schedule showing and hiding of the popup
-  setInterval(function() {
-      hideUserPopup3(); // Hide the popup
-      setTimeout(function() {
-          showUserPopup3(); // Show the popup after hiding
-      }, 1000); // Change 2000 to desired milliseconds for the interval
-  }, 10000); // Change 5000 to desired milliseconds for the total interval
-  }, 1000);
+// Hide all popups initially
+function hideAllPopups() {
+    popupFunctions.forEach(function(popup) {
+        popup.hide(); // Hide each popup
+    });
+}
+
+// Shuffle the popupFunctions array
+shuffleArray(popupFunctions);
+
+// Function to handle the popup queue
+function handlePopupQueue() {
+    // If there are popups left in the queue
+    if (popupFunctions.length > 0) {
+        var popup = popupFunctions.shift(); // Take the first popup from the queue
+        popup.show(); // Show the popup using the show function in the object
+        setTimeout(function () {
+            popup.hide(); // Hide the popup using the hide function in the object
+            popupFunctions.push(popup); // Push the popup back to the end of the array
+            handlePopupQueue(); // Proceed to the next popup immediately
+        }, 5000); // Adjust the delay as needed
+    } else {
+        // If all popups have been shown, shuffle and start again
+        shuffleArray(popupFunctions);
+        setTimeout(handlePopupQueue, 5000); // Delay before starting again
+    }
+}
+
+// Call hideAllPopups initially to hide all popups
+hideAllPopups();
+
+// Call handlePopupQueue initially to start the sequence
+handlePopupQueue();
 
 </script>
 
