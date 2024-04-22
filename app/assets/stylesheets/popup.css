@@ -79,7 +79,8 @@ body {
 }
 
 .action-container {
- display: flex; 
+ display: flex;
+ padding-top: 5%;
 }
 
 .action {
