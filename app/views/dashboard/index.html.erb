@@ -174,7 +174,7 @@
         <div class="media mb-3">
           <%= image_tag "d1.jpg", class: "img-fluid mr-3 rounded-circle", alt: "User Profile Image" %>
           <div class="media-body">
-            <h5 class="mt-0">Crystal Waston</h5>
+            <h5 class="mt-0">Claire Davis</h5>
             <!-- Post image -->
             <div class="post-added">
             <%= image_tag "d2.jpg", class: "img-fluid", alt: "Post Image" %>
@@ -185,7 +185,7 @@
               <div class="d-flex align-items-center mb-2">
                 <!-- Like count -->
                 <div class="like-count mr-3">
-                  <i class="fas fa-heart"></i> 23
+                  <i class="fas fa-heart"></i> 19
                 </div>
                 <!-- Like button -->
                 <button type="button" class="trigger-popup btn btn-outline-primary btn-sm"><i class="fas fa-heart"></i> Like</button>
@@ -200,10 +200,90 @@
               </div>
               <!-- Sample comment -->
               <div class="media mt-3 sample-comment">
-                <img src="https://img.freepik.com/free-photo/emotional-young-male-with-blue-shirt-standing-gate-with-slight-smile-his-face_181624-27994.jpg?size=626&ext=jpg&ga=GA1.1.1991735360.1711673144&semt=ais" class="mr-3 rounded-circle" alt="Sample User Avatar">
-                <h6 class="mt-0">Stark33</h6>
+                <img src="https://cdn.pixabay.com/photo/2019/07/26/20/52/man-4365597_640.png" class="mr-3 rounded-circle" alt="Sample User Avatar">
+                <h6 class="mt-0">Martin</h6>
                 <div class="media-body add-comment">
-                  <p>You are awesomer !</p>
+                  <p>Damn! Why are you so cute?</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-9 sample-post">
+        <div class="media mb-3">
+          <%= image_tag "d13.jpg", class: "img-fluid mr-3 rounded-circle", alt: "User Profile Image" %>
+          <div class="media-body">
+            <h5 class="mt-0">Hope Taylor</h5>
+            <!-- Post image -->
+            <div class="post-added">
+            <%= image_tag "d12.jpg", class: "img-fluid", alt: "Post Image" %>
+            </div>
+            <!-- Like and comment section -->
+            <div class="like-comment-section">
+              <!-- Like count and like button in the same row -->
+              <div class="d-flex align-items-center mb-2">
+                <!-- Like count -->
+                <div class="like-count mr-3">
+                  <i class="fas fa-heart"></i> 15
+                </div>
+                <!-- Like button -->
+                <button type="button" class="trigger-popup btn btn-outline-primary btn-sm"><i class="fas fa-heart"></i> Like</button>
+                <button type="button" class="trigger-popup btn btn-danger btn-sm ml-2">Live</button>
+              </div>
+              <!-- Comment input box -->
+              <div class="input-group mt-2">
+                <input type="text" class="form-control" placeholder="Write a comment" aria-label="Write a comment" aria-describedby="button-addon2">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary trigger-popup" type="button" id="button-addon2">Comment</button>
+                </div>
+              </div>
+              <!-- Sample comment -->
+              <div class="media mt-3 sample-comment">
+                <img src="https://cdn.pixabay.com/photo/2016/12/02/08/30/man-1877208_640.jpg" class="mr-3 rounded-circle" alt="Sample User Avatar">
+                <h6 class="mt-0">Freekie_23</h6>
+                <div class="media-body add-comment">
+                  <p>you’re so darn cute</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-9 sample-post">
+        <div class="media mb-3">
+          <%= image_tag "d11.jpg", class: "img-fluid mr-3 rounded-circle", alt: "User Profile Image" %>
+          <div class="media-body">
+            <h5 class="mt-0">Nicole Johnson</h5>
+            <!-- Post image -->
+            <div class="post-added">
+            <%= image_tag "d10.jpg", class: "img-fluid", alt: "Post Image" %>
+            </div>
+            <!-- Like and comment section -->
+            <div class="like-comment-section">
+              <!-- Like count and like button in the same row -->
+              <div class="d-flex align-items-center mb-2">
+                <!-- Like count -->
+                <div class="like-count mr-3">
+                  <i class="fas fa-heart"></i> 11
+                </div>
+                <!-- Like button -->
+                <button type="button" class="trigger-popup btn btn-outline-primary btn-sm"><i class="fas fa-heart"></i> Like</button>
+                <button type="button" class="trigger-popup btn btn-danger btn-sm ml-2">Live</button>
+              </div>
+              <!-- Comment input box -->
+              <div class="input-group mt-2">
+                <input type="text" class="form-control" placeholder="Write a comment" aria-label="Write a comment" aria-describedby="button-addon2">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary trigger-popup" type="button" id="button-addon2">Comment</button>
+                </div>
+              </div>
+              <!-- Sample comment -->
+              <div class="media mt-3 sample-comment">
+                <img src="https://cdn.pixabay.com/photo/2019/10/22/13/43/man-4568761_640.jpg" class="mr-3 rounded-circle" alt="Sample User Avatar">
+                <h6 class="mt-0">Derik</h6>
+                <div class="media-body add-comment">
+                  <p>Can’t wait to see you tonight</p>
                 </div>
               </div>
             </div>
@@ -221,7 +301,7 @@
         <div class="col text-center">
           <i class="trigger-popup fas fa-arrow-down"></i>
         </div>
-      </div>
+      </div> 
     </div>
 
   
@@ -283,22 +363,22 @@
 
 <div id="userPopup1" class="userPopup container d-flex justify-content-center align-items-center">
     <div class="card">
-        <div class="user mt-2 text-center">
+        <div class="user mt-1 text-center">
             <div class="profile">
             <%= image_tag "n12.jpg", class: "img-fluid rounded-circle", alt: "Post Image", width: "80" %>
             </div>
         </div>
-        <div class="mt-2 text-center">
+        <div class="mt-1 text-center">
             <h5 class="mb-0">Natosha Jacobs</h5>
-            <span class="text-muted d-block mb-2">9 miles away</span>
+            <span class="text-muted d-block mb-1">9 miles away</span>
             <button class="trigger-popup btn btn-danger btn-sm follow">Follow</button>
             <div class="stats">
               <p class="mb-0">Followers:<span>47</span></p>
               <p class="mb-0">Status:<span>Online</span></p> 
             </div>
         </div>
-        <div class="mt-2 text-left">
-          <span class="text-message text-muted d-block mb-2">I'm lonely</span>
+        <div class="mt-1 text-left">
+          <span class="text-message text-muted d-block mb-1">I'm lonely</span>
           <div class="message-input">
             <input type="text" class="form-control" placeholder="Write your text">
             <button class="trigger-popup btn btn-sm send">Send</button>
@@ -308,22 +388,22 @@
 </div>
 <div id="userPopup2" class="userPopup container d-flex justify-content-center align-items-center">
     <div class="card">
-        <div class="user mt-2 text-center">
+        <div class="user mt-1 text-center">
             <div class="profile">
             <%= image_tag "d9.jpg", class: "img-fluid rounded-circle", alt: "Post Image", width: "80" %>
             </div>
         </div>
-        <div class="mt-2 text-center">
+        <div class="mt-1 text-center">
             <h5 class="mb-0">Benjamin Tims</h5>
-            <span class="text-muted d-block mb-2">3 miles away</span>
+            <span class="text-muted d-block mb-1">3 miles away</span>
             <button class="trigger-popup btn btn-danger btn-sm follow">Follow</button>
             <div class="stats">
               <p class="mb-0">Followers:<span>31</span></p>
               <p class="mb-0">Status:<span>Online</span></p> 
             </div>
         </div>
-        <div class="mt-2 text-left">
-          <span class="text-message text-muted d-block mb-2">Hi Honey!</span>
+        <div class="mt-1 text-left">
+          <span class="text-message text-muted d-block mb-1">Hi Honey!</span>
           <div class="message-input">
             <input type="text" class="form-control" placeholder="Write your text">
             <button class="trigger-popup btn btn-sm send">Send</button>
@@ -333,22 +413,22 @@
 </div>
 <div id="userPopup3" class="userPopup container d-flex justify-content-center align-items-center">
     <div class="card">
-        <div class="user mt-2 text-center">
+        <div class="user mt-1 text-center">
             <div class="profile">
-            <%= image_tag "d7.jpg", class: "img-fluid rounded-circle", alt: "Post Image", width: "80" %>
+            <%= image_tag "d5.jpg", class: "img-fluid rounded-circle", alt: "Post Image", width: "80" %>
             </div>
         </div>
-        <div class="mt-2 text-center">
+        <div class="mt-1 text-center">
             <h5 class="mb-0"> Ashley Rosa</h5>
-            <span class="text-muted d-block mb-2">7 miles away</span>
+            <span class="text-muted d-block mb-1">7 miles away</span>
             <button class="trigger-popup btn btn-danger btn-sm follow">Follow</button>
             <div class="stats">
               <p class="mb-0">Followers:<span>23</span></p>
               <p class="mb-0">Status:<span>Online</span></p> 
             </div>
         </div>
-        <div class="mt-2 text-left">
-          <span class="text-message text-muted d-block mb-2">Are you available?</span>
+        <div class="mt-1 text-left">
+          <span class="text-message text-muted d-block mb-1">Are you available?</span>
           <div class="message-input">
             <input type="text" class="form-control" placeholder="Write your text">
             <button class="trigger-popup btn btn-sm send">Send</button>
