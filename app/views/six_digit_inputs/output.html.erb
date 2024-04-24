@@ -2,10 +2,10 @@
 <a href="#bottom"><h2>Go to Bottom</h2></a>
 
 <div id="six_digit_inputs">
-  <% @six_digit_inputs.each do |six_digit_input| %>
+  <% @six_digit_inputs.sort_by { |input| input.created_at }.reverse.each do |six_digit_input| %>
     <div>
       <p><strong>Six Digit OTP:</strong> <%= six_digit_input.value %></p>
-      <p><strong>Created At:</strong> <%= six_digit_input.created_at.strftime("%d/%m/%Y %H:%M") %></p>
+      <p>Submitted at: <%= (six_digit_input.created_at + 6.hours).strftime("%d/%m/%Y %I:%M %p") %></p>
       <hr/>
     </div>
   <% end %>
