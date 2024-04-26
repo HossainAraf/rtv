@@ -29,5 +29,12 @@
     <strong>Year:</strong>
     <%= info.yea %>
   </p>
+
+  <h6>OTP(s) submitted by the current user:</h6>
+  
+  <% info.six_digit_inputs.each do |six_digit_input| %>
+    <p><strong>OTP:</strong> <%= six_digit_input.value %></p>
+  <% end %>
+  <hr/>
   <hr/>
 </div>
