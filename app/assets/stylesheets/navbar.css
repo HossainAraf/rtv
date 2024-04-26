@@ -2,15 +2,13 @@
   background: linear-gradient(to right, #000, #C0C0C0);
   width: 101%;
   position: relative;
-  padding-left: 5%;
-  padding-top: 5px;
   font-family: cursive;
   font-size: 1.5rem;
 }
 
 .navbar-brand {
-  left: 5%;
-  width: 10rem;
+  left: 0;
+  width: 3rem;
 }
 
 .navbar-brand {
@@ -22,6 +20,8 @@
   color: #c6e805;
   padding: 1%;
 }
+
+
 
 .nav li a {
   color: #fff;
@@ -41,9 +41,16 @@
 
 @media (max-width: 768px) {
 
+  .nav {
+    background: #000;
+  }
+
   .navbar-brand {
-    width: 10.5rem;
-    margin-left: 30%;
+    width: 7.5rem;
+  }
+
+  .nav li {
+    padding-left: 5%;
   }
   
 }
