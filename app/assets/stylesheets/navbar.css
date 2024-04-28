@@ -3,11 +3,12 @@
   position: relative;
   font-family: cursive;
   font-size: 1.5rem;
+  height: 4.5rem;
 }
 
 .navbar-brand {
   flex-shrink: 0; /* Prevent logo from shrinking */
-  width: 10rem;
+  width: 13rem;
 }
 
 .nav h4 {
@@ -27,6 +28,11 @@
   color: #c6e805;
 }
 
+.navbar-toggler {
+  margin-right: 0.5rem;
+}
+}
+
 .navbar-toggler .bar {
   display: block;
   width: 20px;
@@ -41,7 +47,7 @@
   }
 
   .navbar-brand {
-    width: 7.5rem;
+   position: absolute;
   }
 
   .nav li {
