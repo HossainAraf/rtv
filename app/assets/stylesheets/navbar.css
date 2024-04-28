@@ -1,13 +1,24 @@
 .nav {
   background: linear-gradient(to right, #fca011,  #ffa117);
-  position: relative;
+  width: 100%;
   font-family: cursive;
   font-size: 1.5rem;
+  height: auto;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1%;
 }
 
 .navbar-brand {
   flex-shrink: 0; /* Prevent logo from shrinking */
-  width: 10rem;
+  width: 9rem;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin: 0;
 }
 
 .nav h4 {
@@ -27,7 +38,12 @@
   color: #c6e805;
 }
 
-.navbar-toggler .bar {
+.navbar-toggler {
+  border: none;
+  background: transparent;
+}
+
+.bar {
   display: block;
   width: 20px;
   height: 2px;
@@ -35,14 +51,6 @@
 }
 
 @media (max-width: 768px) {
-
-  .nav {
-    background: #ffa117;
-  }
-
-  .navbar-brand {
-    width: 7.5rem;
-  }
 
   .nav li {
     padding-left: 5%;
