@@ -3,22 +3,11 @@
   width: 100%;
   font-family: cursive;
   font-size: 1.5rem;
-  height: auto;
-}
-
-.wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1%;
 }
 
 .navbar-brand {
   flex-shrink: 0; /* Prevent logo from shrinking */
   width: 9rem;
-  padding-top: 0;
-  padding-bottom: 0;
-  margin: 0;
 }
 
 .nav h4 {
@@ -39,11 +28,11 @@
 }
 
 .navbar-toggler {
+  margin-right: 0.5rem;
   border: none;
-  background: transparent;
 }
 
-.bar {
+.navbar-toggler .bar {
   display: block;
   width: 20px;
   height: 2px;
