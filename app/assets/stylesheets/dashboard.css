@@ -31,7 +31,7 @@ body {
 .top-actions {
   display: flex;
   justify-content: flex-end;
-  align-items: center;
+  align-items: baseline;
   padding: 0.5rem;
   color:blanchedalmond;
   cursor: pointer;
@@ -100,6 +100,13 @@ align-items: center;
 
 .sidebar a:hover {
   background-color: #b50000;
+}
+
+.icon-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1%;
 }
 
 .add-post {
