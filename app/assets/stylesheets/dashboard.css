@@ -7,7 +7,6 @@ body {
 .container-wrapper {
   display: flex;
   justify-content: space-between;
-  width: 100%;
 }
 
 .trigger-popup {
@@ -31,7 +30,7 @@ body {
 
 .top-actions {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   padding: 0.5rem;
   color:blanchedalmond;
@@ -221,9 +220,9 @@ align-items: center;
 }
 
 .sidebar-toggle-btn {
-  position: fixed;
+  position: absolute;
   background-color: transparent;
-  top: 3rem;
+  top: -3.54rem;
   left: 5px;
   z-index: 99999;
   border-color: #000;
