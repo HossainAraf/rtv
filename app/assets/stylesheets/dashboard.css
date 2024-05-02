@@ -271,7 +271,7 @@ align-items: center;
 /* Popup Container Heading */
 .popup-container #heading2 {
   text-align: center;
-  color: #fff;
+  color: #000;
 }
 
 /* Show popup animation */
