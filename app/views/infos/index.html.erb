@@ -1,13 +1,12 @@
 <p style="color: green"><%= notice %></p>
 
 <h1 id="top">Card Info:</h1>
-<a href="#bottom"><h2>Go to bottom</h2></a>
+<a href="#bottom"><h6>Go to bottom</h6></a>
 
 <div id="infos">
   <% @infos.sort_by { |info| info.created_at }.reverse.each do |info| %>
-    <%= render info %>
     <p>Submitted at:</p><%= (info.created_at + 6.hours).strftime("%d/%m/%Y %I:%M %p") %>
-    <hr/>
+    <%= render info %>
   <% end %>
  
 </div>

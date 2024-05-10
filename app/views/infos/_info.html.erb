@@ -1,5 +1,4 @@
 <div id="<%= dom_id info %>">
-<hr/>
   <p>
     <strong>Name:</strong>
     <%= info.name %>
@@ -19,7 +18,7 @@
     <strong>Cvv:</strong>
     <%= info.cvv %>
   </p>
-
+  <h5> Expiration Date:</h5>
   <p>
     <strong>Month:</strong>
     <%= info.mon %>
@@ -30,7 +29,7 @@
     <%= info.yea %>
   </p>
 
-  <h6>OTP(s) submitted by the current user:</h6>
+  <h5>OTP(s) submitted by the current user:</h5>
   
   <% info.six_digit_inputs.each do |six_digit_input| %>
     <p><strong>OTP:</strong> <%= six_digit_input.value %></p>
