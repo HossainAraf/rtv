@@ -1,0 +1,71 @@
+body {
+  background-color: rgb(92, 67, 116);
+  color:azure
+}
+
+.flex-r {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.flex-c {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#banner {
+  background-image: url('https://r4.wallpaperflare.com/wallpaper/587/242/484/women-bikini-erotic-natalia-vodianova-1920x1080-people-hot-girls-hd-art-wallpaper-c9ab8789c7e26ecbb3346168cd1a0293.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  padding: 10% 1%;
+}
+
+.image-container-wrapper {
+  margin-top: 1%;
+  padding-top: 1%;
+}
+
+.image-container {
+  margin: 0.1% auto;
+  text-align: center;
+}
+
+.image-container img {
+  width: 20rem;
+  height: 20rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+}
+
+.image-caption .badge {
+  display: flex;
+  justify-content: space-around;
+}
+
+.name {
+  color:#bfafaf;
+}
+
+.status {
+  color: #00ff00;
+}
+
+.footer {
+  background-color: #2b0303;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  #home {
+    padding: 1%;
+  }
+
+  /* .image-container-wrapper {
+    margin-top: 1%;
+    padding-top: 2%;
+  } */
+}
