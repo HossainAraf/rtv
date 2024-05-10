@@ -1,14 +1,18 @@
 .nav {
   background: linear-gradient(to right, #fca011,  #ffa117);
-  position: relative;
-  font-family: cursive;
+  width: 100%;
+  font-family: Helvetia;
   font-size: 1.5rem;
-  height: 4.5rem;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-around;
 }
 
 .navbar-brand {
   flex-shrink: 0; /* Prevent logo from shrinking */
-  width: 13rem;
+  width: 9rem;
 }
 
 .nav h4 {
@@ -30,7 +34,7 @@
 
 .navbar-toggler {
   margin-right: 0.5rem;
-}
+  border: none;
 }
 
 .navbar-toggler .bar {
@@ -42,12 +46,9 @@
 
 @media (max-width: 768px) {
 
-  .nav {
-    background: #ffa117;
-  }
-
   .navbar-brand {
-   position: absolute;
+    width: 5.5rem;
+    margin-left: 1rem;
   }
 
   .nav li {

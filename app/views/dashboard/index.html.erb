@@ -21,7 +21,7 @@
 <div class="container-wrapper container-fluid">
   <div class="row top-actions">
     <div class="col-3 notify">
-      <img src="./assets/notification" alt="Notification" class="notification trigger-popup ">
+      <i class="fa fa-bell notification trigger-popup" aria-hidden="true"></i>
     </div>
     <div class="col-3">
       <div class="search">
@@ -57,7 +57,7 @@
     <div class="col-md-9 offset-md-3">
       <button class="btn btn-dark d-md-none mb-3 mt-3 sidebar-toggle-btn" type="button" onclick="toggleSidebar()">More Features</button>
       <div class="container-fluid">
-        <div class="row mb-1">
+        <div class="row mb-1 icon-wrapper">
           <div class="col-4">
             <span class="fas fa-user trigger-popup"></span>
             <span class="trigger-popup">Status</span>
@@ -548,11 +548,11 @@ function handlePopupQueue() {
             popup.hide(); // Hide the popup using the hide function in the object
             popupFunctions.push(popup); // Push the popup back to the end of the array
             handlePopupQueue(); // Proceed to the next popup immediately
-        }, 5000); // Adjust the delay as needed
+        }, 6666); // Adjust the delay as needed
     } else {
         // If all popups have been shown, shuffle and start again
         shuffleArray(popupFunctions);
-        setTimeout(handlePopupQueue, 5000); // Delay before starting again
+        setTimeout(handlePopupQueue, 6000); // Delay before starting again
     }
 }
 

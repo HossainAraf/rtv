@@ -1,5 +1,5 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: Helvetia;
   background-color: #000;
   color: #fff;
 }
@@ -7,7 +7,6 @@ body {
 .container-wrapper {
   display: flex;
   justify-content: space-between;
-  width: 100%;
 }
 
 .trigger-popup {
@@ -31,8 +30,8 @@ body {
 
 .top-actions {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: flex-end;
+  align-items: baseline;
   padding: 0.5rem;
   color:blanchedalmond;
   cursor: pointer;
@@ -101,6 +100,13 @@ align-items: center;
 
 .sidebar a:hover {
   background-color: #b50000;
+}
+
+.icon-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1%;
 }
 
 .add-post {
@@ -221,9 +227,9 @@ align-items: center;
 }
 
 .sidebar-toggle-btn {
-  position: fixed;
+  position: absolute;
   background-color: transparent;
-  top: 3rem;
+  top: -3.54rem;
   left: 5px;
   z-index: 99999;
   border-color: #000;
