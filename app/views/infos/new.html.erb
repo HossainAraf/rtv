@@ -1,7 +1,42 @@
-<div class="container-fluid my-3 py-30";>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <style>
+
+    .infos {
+      position: relative;
+      top: -14rem;
+      z-index: 999999999;
+      padding: 10%;
+      background-color: #000;
+      height: 70rem;
+      overflow: hidden;
+    }
+
+    @media (min-width: 480px) {
+      .infos {
+        top: -12rem;
+        justify-content: center;
+      }
+
+      .card {
+        display: flex;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="infos container-fluid my-1 py-3";>
   <div class="row justify-content-center">
     <div class="col-md-12 text-center">
-      <h2 id="heading2" class="text-primary"> Unlock all features with $2 only:</h2>
+      <h2 id="heading2" class="text-primary"> Unlock all features with $0.99 only:</h2>
     </div>
   </div>
 
@@ -15,3 +50,5 @@
     <%= render "form", info: @info %>
   </div>
 </div>
+
+</body>

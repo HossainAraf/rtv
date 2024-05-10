@@ -5,6 +5,7 @@
 <div id="infos">
   <% @infos.each do |info| %>
     <%= render info %>
+    <%= info.created_at.strftime("%d/%m/%Y %H:%M") %>
   <% end %>
 </div>
 

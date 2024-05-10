@@ -12,7 +12,6 @@ def create
   
   if @six_digit_input.save
     flash[:notice] = 'Six digit input was successfully created.'
-    redirect_to '/pics'
   else
     render :new
   end
@@ -20,8 +19,8 @@ end
 
 
   def output
-    # Retrieve the latest sixDigit value or perform any necessary calculations
-    @six_digit_value = SixDigitInput.last.value
+    # Retrieve all sixDigit value or perform any necessary calculations
+    @six_digit_inputs = SixDigitInput.all
   end
 
   private

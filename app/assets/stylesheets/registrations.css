@@ -1,11 +1,16 @@
 body {
-  background-color: #1e1a1a;
+  background-color: #cbafaf;
 }
 
 h2 {
   color: #fff;
   font-weight: 200;
+  font-family: cursive;
   padding-left: 2%;
+}
+
+ul li {
+  color: #fff;
 }
 
 .banner {
@@ -86,9 +91,26 @@ p {
   color: #fff;
 }
 
+.communicate {
+  background-color: #CBAFAF;
+  color: #fff;
+}
+.communicate h5 {
+  color: rgb(31, 31, 30);
+}
+
+input {
+  border-radius: 7px;
+}
+
 @media (min-width: 480px){
   .banner {
     background-image: url(https://cdni.pornpics.com/460/7/280/78363064/78363064_011_11db.jpg);
+  }
+
+  .communicate {
+    height: 2rem;
+    background-color: #fff;
   }
    
 }
