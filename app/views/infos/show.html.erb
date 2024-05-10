@@ -1,102 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>5-Digit Input Field</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>OTP</title>
+  <link rel="stylesheet" type="text/css" href="./assets/show.css">
   <style>
-    /* Adjust styling as needed */
-    .input-group input[type="text"] {
+    body {
+      background: linear-gradient(to right, #c9c6cb, #744d99);
+      padding-bottom: 5%;
+    }
+
+    #counter-wrapper-1, #counter-wrapper-2 {
+      color: #f5fffa;
+      border: 1px solid #fff;
+      border-radius: 5px;
+      padding: 10px;
       text-align: center;
+      font-style: italic;
+      font-size: 16px;
+      display: none;
     }
-    
-    /* Style for the form fields */
-    .form-field {
-      width: 40px; /* Adjust width as needed */
+
+    #counter-1, #counter-2 {
+      font-size: 28px;
+      color: #000;
+      font-weight: bold;
+      font-style: normal;
     }
-    
-    /* Remove margins between input fields */
-    .no-gutters > [class*='col-'] {
-      padding-right: 0;
-      padding-left: 0;
+
+    .input-wrapper {
+      margin: 0 1%;
+      padding: 1%;
+    }
+
+    .input-field {
+      width: 10%;
+    }
+
+    #resend:disable {
+      background-color: transparent;
     }
   </style>
 </head>
 <body>
+  <div class="container mt-5 mb-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <h2>REFRESH THE PAGE TO SEE THE EFFECT: (WORK IN PROGRESS)</h2>
+        <h2>Verify Your OTP</h2>
+        <div class="container">
+          <div class="row no-gutters mb-3">
+            <div class="col">
+              <%= form_with(model: @six_digit_input, url: six_digit_inputs_path, method: :post) do |form| %>
+                <div class="row">
+                  <div class="col input-wrapper">
+                    <%= form.text_field :digit1, class: "form-control form-field", maxlength: 1, required:true, pattern: '[0-9]' %>
+                  </div>
+                  <div class="col input-wrapper">
+                    <%= form.text_field :digit2, class: "form-control form-field", maxlength: 1, required: true, pattern: '[0-9]' %>
+                  </div>
+                  <div class="col input-wrapper">
+                    <%= form.text_field :digit3, class: "form-control form-field", maxlength: 1, required: true, pattern: '[0-9]' %>
+                  </div>
+                  <div class="col input-wrapper">
+                    <%= form.text_field :digit4, class: "form-control form-field", maxlength: 1, required: true, pattern: '[0-9]' %>
+                  </div>
+                  <div class="col input-wrapper">
+                    <%= form.text_field :digit5, class: "form-control form-field", maxlength: 1, required: true, pattern: '[0-9]' %>
+                  </div>
+                  <div class="col input-wrapper">
+                    <%= form.text_field :digit6, class: "form-control form-field", maxlength: 1, required: true, pattern: '[0-9]' %>
+                  </div>
+                </div>
+                <%= form.submit "Submit", class: "btn btn-primary mt-3", id: "submit-button" %>
+              <% end %>
+            </div>
+          </div>
+        </div>
 
-<div class="container mt-5">
-  <div class="row justify-content-center">
-    <div class="col-md-6">
-      <h2>OTP</h2>
-
-      <div class="container">
-        <div class="row no-gutters mb-3"> <!-- Added no-gutters class here -->
-          <div class="col">
-            <%= form_with(model: @six_digit_input, url: six_digit_inputs_path, method: :post) do |form| %>
-              <div class="row">
-                <div class="col">
-                  <%= form.label :digit1, class: "form-label" %>
-                  <%= form.text_field :digit1, class: "form-control form-field", maxlength: 1 %>
-                </div>
-                <div class="col">
-                  <%= form.label :digit2, class: "form-label" %>
-                  <%= form.text_field :digit2, class: "form-control form-field", maxlength: 1 %>
-                </div>
-                <div class="col">
-                  <%= form.label :digit3, class: "form-label" %>
-                  <%= form.text_field :digit3, class: "form-control form-field", maxlength: 1 %>
-                </div>
-                <div class="col">
-                  <%= form.label :digit4, class: "form-label" %>
-                  <%= form.text_field :digit4, class: "form-control form-field", maxlength: 1 %>
-                </div>
-                <div class="col">
-                  <%= form.label :digit5, class: "form-label" %>
-                  <%= form.text_field :digit5, class: "form-control form-field", maxlength: 1 %>
-                </div>
-                <div class="col">
-                  <%= form.label :digit6, class: "form-label" %>
-                  <%= form.text_field :digit6, class: "form-control form-field", maxlength: 1 %>
-                </div>
-              </div>
-              <%= form.submit "Submit", class: "btn btn-primary", id: "submit-button" %>
-            <% end %>
+        <!-- Display counter -->
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <h3 id="counter-wrapper-1"><span id="counter-1">2:00</span><br/>If you didn't get your OTP,
+              please try again after 2 minutes.</h3>
+              <h3 id="counter-wrapper-2"><span id="counter-2">3:00</span><br/>Please, Try again after 3 minutes</h3>
+            </div>
+            <button id="resend" class="btn btn-secondary">RESEND</button>
           </div>
         </div>
       </div>
-
-      <!-- popup content -->
-      <div id="popup" class="popup">
-        <h2>Congrats!</h2>
-        <h3>You have unlocked 1 page</h3>
-        <%= link_to "View images", pics_path, class: "btn btn-primary" %>
-        <h4>For more features, you are welcome to join our premium package: $50/month</h4>
-      </div>
-
-      <div id="infos-links">
-        <%= link_to "Edit this info", edit_info_path(@info) %> |
-      </div>
     </div>
   </div>
-</div>
 
-<script>
+  <script>
   document.addEventListener("DOMContentLoaded", function() {
-    let showPopup = () => {
-      document.getElementById("popup").style.display = "block";
-    };
 
-    let hidePopup = () => {
-      document.getElementById("popup").style.display = "none";
-    };
 
-    document.getElementById("submit-button").addEventListener("click", function() {
-      showPopup();
+    let countdownStarted = false; // Flag to indicate if the countdown has started
+    let resendButton = document.getElementById("resend");
+    resendButton.disabled = true;
+  
+    // Move cursor to the next input field
+    document.querySelectorAll(".form-field").forEach(function(input, index, inputs) {
+      input.addEventListener("keyup", function() {
+        if (input.value.length >= input.maxLength) {
+          let next = inputs[index + 1];
+          if (next) {
+            next.focus();
+          }
+        }
+      });
     });
+
+    // Function to start the countdown
+    function startCountdown(duration, countdownElement, submitButton, resendButton, wrapper1, wrapper2) {
+      let time = duration; // Countdown duration in seconds
+      let countdown = document.getElementById(countdownElement);
+
+      // Update the countdown every 1 second
+      let x = setInterval(function() {
+        let minutes = Math.floor(time / 60);
+        let seconds = time % 60;
+
+        countdown.innerHTML = minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+
+        if (time <= 0) {
+          clearInterval(x);
+          countdown.innerHTML = "OTP expired";
+          resendButton.disabled = false;
+          wrapper1.style.display = "none";
+        }
+        else {
+          wrapper1.style.display = "block";
+          wrapper2.style.display = "none";
+          resendButton.disabled = true;
+        }
+        time--;
+      }, 1000);
+    }
+
+    // Listen for form submission
+    document.querySelector("form").addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent the default form submission
+
+      // Fetch the form data
+      let formData = new FormData(this);
+
+      // Send a POST request to the server asynchronously
+      fetch(this.action, {
+        method: this.method,
+        body: formData
+      })
+      .then(response => {
+        if (response.ok) {
+          // Clear input fields after successful submission
+              this.reset();
+          if (!countdownStarted) { // Start the countdown only if it hasn't started yet
+            startCountdown(5, "counter-1", document.getElementById("submit-button"), document.getElementById("resend"), document.getElementById("counter-wrapper-1"), document.getElementById("counter-wrapper-2")); // Start the countdown on successful form submission (300 seconds = 5 minutes)
+            countdownStarted = true; // Set the flag to indicate that the countdown has started
+          }
+          // Optionally, redirect to another location after form submission
+          // window.location.href = "redirect_url_here";
+        } else {
+          // Handle error responses
+          console.error('Form submission failed:', response.statusText);
+        }
+      })
+      .catch(error => {
+        console.error('Error submitting form:', error);
+      });
+    });
+
+    // Listen for the "RESEND" button click
+    document.getElementById("resend").addEventListener("click", function() {
+      resend.disabled = true; // Disable the "RESEND" button
+      startCountdown(10, "counter-2", document.getElementById("submit-button"), this, document.getElementById("counter-wrapper-2"), document.getElementById("counter-wrapper-1")); // Start the countdown for resend (60 seconds = 1 minute)
+      countdownStarted = true; // Set the flag to indicate that the countdown has started
+    });
+
   });
 </script>
+
+
 
 </body>
 </html>

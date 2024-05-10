@@ -1,7 +1,12 @@
 body {
-  background-color: rgb(92, 67, 116);
-  color:azure
+  background-color: #000;
+  color:azure;
+  width: 100%;
 }
+/* 
+.row > * {
+ width: 9rem;
+} */
 
 .flex-r {
   display: flex;
@@ -14,16 +19,31 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: flex-start;
+}
+
+.i-container {
+  display: flex;
+  justify-content: center;
   align-items: center;
+  width: 9rem;
 }
 
 #banner {
-  background-image: url('https://r4.wallpaperflare.com/wallpaper/587/242/484/women-bikini-erotic-natalia-vodianova-1920x1080-people-hot-girls-hd-art-wallpaper-c9ab8789c7e26ecbb3346168cd1a0293.jpg');
-  background-size: 100%;
-  background-repeat: no-repeat;
+  background-image: url('1.gif');
+  background-size: cover;
   padding: 10% 1%;
+  min-height: 40rem;
 }
 
+.landing-image-container h1 {
+  font-size: 24px;
+  padding-top: 10%;
+}
+
+.landing-image-container p {
+  font-size:16px;
+}
 .image-container-wrapper {
   margin-top: 1%;
   padding-top: 1%;
@@ -35,7 +55,7 @@ body {
 }
 
 .image-container img {
-  width: 20rem;
+  width: 15rem;
   height: 20rem;
   border-radius: 10px;
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
@@ -46,6 +66,10 @@ body {
   justify-content: space-around;
 }
 
+.image-caption p {
+  padding: 0 3%;
+}
+
 .name {
   color:#bfafaf;
 }
@@ -54,18 +78,49 @@ body {
   color: #00ff00;
 }
 
-.footer {
-  background-color: #2b0303;
-  text-align: center;
+.action-container {
+ display: flex; 
 }
+
+.action {
+  flex-basis: 40%;
+}
+
+.action p {
+  margin-right: 2%;
+  margin-top: 10%;
+  margin-bottom: 15%;
+  font-size: 1.2rem;
+}
+
+.action-img {
+  flex-basis: 60%;
+  width: 100%;
+  height: 50rem;
+  background-image: url('7.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  background-position-x: center;
+}
+
 
 @media (max-width: 480px) {
   #home {
     padding: 1%;
   }
 
-  /* .image-container-wrapper {
-    margin-top: 1%;
-    padding-top: 2%;
-  } */
+  #banner {
+    background-repeat: round;
+    padding: 1%;
+    min-height: 29rem;
+  }
+
+  .action p {
+    font-size: 0.85rem;
+  }
+
+  .action-img {
+    height: 28rem;
+  }
 }

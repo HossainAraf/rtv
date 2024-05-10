@@ -4,8 +4,8 @@
   <link rel="stylesheet" type="text/css" href="./assets/registrations.css">
 </head>
 <body>
-<section class="h-100 banner">
-    <div class="container py-5 h-100">
+<section class=" banner">
+    <div class="container py-2 h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-md-6">
           <div class="card card-registration my-4">
@@ -13,37 +13,37 @@
               <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "registration-form"}) do |f| %>
                 <%= render "devise/shared/error_messages", resource: resource %>
 
-                <div class="mb-3">
+                <div class="mb-2">
                   <%= f.label :I_am, class: "form-label" %>
-                  <%= f.select :gender, ["man", "woman", "couple"], class: "form-select" %>
+                  <%= f.select :gender, ["select", "man", "woman", "couple"], class: "form-select" %>
                 </div>
-                <div class="mb-3">
+                <div class="mb-2">
                   <%= f.label :looking_for, "Looking for", class: "form-label" %>
-                  <%= f.select :looking, ["woman", "man", "couple"], class: "form-select" %>
+                  <%= f.select :looking, ["select", "woman", "man", "couple"], class: "form-select" %>
                 </div>
-                <div class="mb-3">
+                <div class="mb-2">
                   <%= f.label :Age, class: "form-label" %>
                   <%= f.number_field :age, class: "form-control", placeholder: "18" %>
                 </div>
-                <div class="mb-3">
+                <div class="mb-2">
 
-                <div class="mb-3">
+                <div class="mb-2">
                   <%= f.label :email, "Email", class: "form-label" %>
-                  <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "....@example.com" %>
+                  <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control select", placeholder: "....@example.com" %>
                 </div>
-                <div class="mb-3">
+                <div class="mb-2">
                   <%= f.label :password, class: "form-label" %>
                   <% if @minimum_password_length %>
                     <em>(<%= @minimum_password_length %> characters minimum)</em>
                   <% end %>
                   <%= f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: "******" %>
                 </div>
-                <div class="mb-3">
+                <div class="mb-2">
                   <%= f.label :password_confirmation, class: "form-label" %>
                   <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", placeholder: "******" %>
                 </div>
                 <div class="text-center">
-                  <%= f.submit "Sign up", class: "btn btn-danger btn-lg" %>
+                  <%= f.submit "Sign up", class: "btn btn-signup btn-lg" %>
                 </div>
               <% end %>
               <div class="text-center login">
@@ -55,19 +55,44 @@
       </div>
     </div>
   </section>
-  <section class="container-fluid">
-    <span class="row">
-      <h2>Find, communicate and meet with like-minded people.</h2>
+  <section class="container-fluid communicate">
+    <span class="row text-center">
+      <h5>Find, communicate and meet with like-minded people.</h5>
     </span>
   </section>
-  <section class="container-fluid">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="footer">
-          <p class="text-center">© 2021 All rights reserved. <a href="#">Privacy</a> | <a href="#">Terms</a></p>
-        </div>
-      </div>
-    </div>
-  </section>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        let selectElements = document.querySelectorAll('select');
+
+        selectElements.forEach(function(select) {
+            select.addEventListener("change", function() {
+                let selectedOption = select.options[select.selectedIndex];
+                let selectedValue = selectedOption.value;
+
+                if (selectedValue) {
+                    select.style.color = '#fff';
+                    select.style.backgroundColor = '#000';
+                } else {
+                    select.style.color = ''; // Reset to default background color
+                }
+            });
+        });
+        let inputFields = document.querySelectorAll('.form-control');
+
+        inputFields.forEach(function(input) {
+            input.addEventListener("input", function() {
+                if (input.value.trim() !== '') {
+                    input.style.color = 'white';
+                    input.style.backgroundColor = 'black';
+                } else {
+                    input.style.color = '';
+                    input.style.backgroundColor = '';
+                }
+            });
+        });
+    });
+</script>
+
 </body>
 </html>
