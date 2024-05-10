@@ -6,9 +6,16 @@ Rails.application.routes.draw do
   # define feedback routes without the admin namespace
   resources :feedbacks, only: [:index, :show]
   resources :infos
-  get 'home/index'
   devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout' }
 
+  authenticated :user do
+    root 'dashboard#index', as: 'authenticated_root'
+  end
+  get 'dashboard/index', to: 'dashboard#index' 
+  get 'pics', to: 'dashboard#pics'
+
+  resources :six_digit_inputs, only: [:create]
+  get 'output', to: 'six_digit_inputs#output'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -16,7 +23,11 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   get '/about', to: 'pages#about', as: 'about'
+  
+  get 'home/index'
 
+  # Define a route for popup action
+  get 'popup', to: 'home#popup'
   # Defines the root path route ("/")
-  root 'home#index'
+  root 'home#popup'
 end

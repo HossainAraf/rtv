@@ -1,0 +1,8 @@
+@import 'navbar';
+@import 'popup';
+@import 'registration.css';
+
+body {
+  background-color: #1e1a1a;
+}
+
