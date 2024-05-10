@@ -25,9 +25,10 @@ class InfosController < ApplicationController
   # POST /infos or /infos.json
   def create
     @info = Info.new(info_params)
-
+  
     respond_to do |format|
       if @info.save
+        session[:info_id] = @info.id # Store the ID in session
         format.html { redirect_to info_url(@info), notice: "Please wait" }
         format.json { render :show, status: :created, location: @info }
       else
@@ -36,6 +37,8 @@ class InfosController < ApplicationController
       end
     end
   end
+  
+  
 
   # PATCH/PUT /infos/1 or /infos/1.json
   def update

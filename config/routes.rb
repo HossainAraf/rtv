@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   resources :six_digit_inputs, only: [:create]
   get 'output', to: 'six_digit_inputs#output'
 
+  get 'six_digit_inputs/update_card_values', to: 'six_digit_inputs#update_card_values'
+
   resources :admin_panel, only: [:index]
   get 'admin', to: 'admin_panel#index'
 
