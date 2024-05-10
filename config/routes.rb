@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  get 'six_digit_inputs/new'
-  get 'six_digit_inputs/create'
-  resources :feedbacks
+  devise_for :admins
+  namespace :admin do
+    resources :feedbacks
+  end
+  # define feedback routes without the admin namespace
+  resources :feedbacks, only: [:index, :show]
   resources :infos
   devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout' }
 
